@@ -1,0 +1,1209 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Quantum States for Quantum Computing &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
+    <link rel="prev" title="Markdown Files" href="markdown.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Quantum States for Quantum Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/notebooks.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Quantum States for Quantum Computing</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content-outline">Content Outline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-state-classical-systems-and-the-classical-bit">Two-state Classical Systems and the Classical Bit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-strings">Bit Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-state-quantum-systems-and-the-quantum-bit">Two-State Quantum Systems and the Quantum Bit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qubit-examples">Qubit Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#born-rule">Born Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-representations-of-qubit-states">Vector Representations of Qubit States</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-realizations-of-qubit-states">Physical Realizations of Qubit States</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qutrit-qudit-states">Qutrit &amp; Qudit States</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-qubit-states">Multi-qubit States</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-qubit-1-0-qubit-2-0">Example 1 (<span class="math notranslate nohighlight">\(Qubit_1 = 0\)</span>, <span class="math notranslate nohighlight">\(Qubit_2 = 0\)</span>):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-qubit-1-0-qubit-2-1">Example 2 (<span class="math notranslate nohighlight">\(Qubit_1 = 0\)</span>, <span class="math notranslate nohighlight">\(Qubit_2 = 1\)</span>):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-qubit-1-1-qubit-2-0">Example 3 (<span class="math notranslate nohighlight">\(Qubit_1 = 1\)</span>, <span class="math notranslate nohighlight">\(Qubit_2 = 0\)</span>):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4-qubit-1-1-qubit-2-1">Example 4 (<span class="math notranslate nohighlight">\(Qubit_1 = 1\)</span>, <span class="math notranslate nohighlight">\(Qubit_2 = 1\)</span>):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generic">Generic :</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entanglement-of-multiple-qubits">Entanglement of Multiple Qubits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-summary-for-reference">Quick Summary for Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quiz">Quiz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div style="display        : inline-block;
+            border         : solid 0px;
+            padding        : 5px;
+            margin         : 2px;
+            vertical-align : text-top;
+            font-family    : sans;">
+<div style="display        : inline-block;
+            border         : solid 0px;
+            padding        : 5px;
+            margin         : 2px;
+            vertical-align : text-top;
+            font-family    : sans;">
+<a href="https://asti.dost.gov.ph/projects/establishment-of-quantum-innovation-laboratory-optimizing-a-decision-diagram-based-free-and-open-source-quantum-circuit-simulator-for-benchmarking-in-an-hpc-environment-using-entanglement-random-cir/">
+<img   src = "qcs-logo.png" 
+       alt = "qcs-logo"
+     align = "right"
+     width = "59" />
+</a>
+</div>
+<div style="display        : inline-block;
+            border         : solid 0px;
+            padding        : 5px;
+            margin         : 2px;
+            vertical-align : text-top;
+            font-family    : sans;">
+<h1> Quantum Circuit Simulation (QCS) Project </h1>
+</div>
+<div style="display        : inline-block;
+            border         : solid 0px;
+            padding        : 5px;
+            margin         : 2px;
+            vertical-align : text-top;
+            font-family    : sans;">
+<a href="https://asti.dost.gov.ph/projects/establishment-of-quantum-innovation-laboratory-optimizing-a-decision-diagram-based-free-and-open-source-quantum-circuit-simulator-for-benchmarking-in-an-hpc-environment-using-entanglement-random-cir/">
+<img   src = "qcs-logo.png" 
+       alt = "qcs-logo"
+     align = "right"
+     width = "59" />
+</a>
+</div>
+</div>
+<hr>
+<section class="tex2jax_ignore mathjax_ignore" id="quantum-states-for-quantum-computing">
+<h1>Quantum States for Quantum Computing<a class="headerlink" href="#quantum-states-for-quantum-computing" title="Permalink to this heading">#</a></h1>
+<div align="left">
+    Prepared by <a href="https://www.linkedin.com/in/ren-tristan-de-la-cruz-724a17144/"> Ren Tristan A. de la Cruz </a>
+</div>
+<hr>
+<section id="content-outline">
+<h2>Content Outline<a class="headerlink" href="#content-outline" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Qubit States</p></li>
+<li><p>Qutrits &amp; Qudits States</p></li>
+<li><p>Multi-qubit States</p></li>
+<li><p>Quick Summary for Reference</p></li>
+<li><p>Quiz</p></li>
+<li><p>References</p></li>
+</ul>
+<hr>
+</section>
+<section id="two-state-classical-systems-and-the-classical-bit">
+<h2>Two-state Classical Systems and the Classical Bit<a class="headerlink" href="#two-state-classical-systems-and-the-classical-bit" title="Permalink to this heading">#</a></h2>
+<p>An abstract <em>two-state</em> classical system is any system that can be in one of <em>two</em> possible abstract states. Let <span class="math notranslate nohighlight">\(\{A, B\}\)</span> be the set of possible abstract states. i.e. The system is either in state <span class="math notranslate nohighlight">\(A\)</span> or in state <span class="math notranslate nohighlight">\(B\)</span>. An abstract two-state system can be implemented in different physical media as long as the physical medium can represent the two abstract states <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. To implement an abstract two-state system (with abstract states <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>) in a physical medium, we use a property of the medium that can have two possible values. One value will represent the abstract state <span class="math notranslate nohighlight">\(A\)</span> while the other value will represent abstract state <span class="math notranslate nohighlight">\(B\)</span>. The table below shows some physical media and the physical properties and values used to represent the two abstract states <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<table>
+  <tr>
+    <th> Physical Medium   </th>
+    <th> Physical Property </th>
+    <th> State $A$         </th>
+    <th> State $B$         </th>
+  </tr>
+  <tr>
+    <td> Punched Card        </td>
+    <td> Existence of a Hole </td>
+    <td> No Hole             </td>
+    <td> Has a Hole          </td>
+  </tr>
+  <tr>
+    <td> Electronic Circuits </td>
+    <td> Voltage Level       </td>
+    <td> Low Voltage (~0V)   </td>
+    <td> High Voltage (~5V)  </td>
+  </tr>
+  <tr>
+    <td> Flash Memory Cell   </td>
+    <td> Cell Charge        </td>
+    <td> 'High' Charge      </td>
+    <td> No or 'Low' Charge </td>
+  </tr>
+  <tr>
+    <td> Magnetic Drive Cell </td>
+    <td> Magnetic Polarity   </td>
+    <td> South-North         </td>
+    <td> North-South         </td>
+  </tr>
+</table>
+<p>The <em>bit</em>, the most basic unit of information in computing, is the amount of information you gain if the actual state of a two-state system is revealed to you (when the system has an equal chance of being in state <span class="math notranslate nohighlight">\(A\)</span> or being in state <span class="math notranslate nohighlight">\(B\)</span>). It is the same amount of information you gain when you get an answer to a yes/no question when there is an equal chance of getting a ‘yes’ or getting a ‘no’ answer. The term ‘bit’ stands for “binary digit” or “binary information digit”. A bit can either be the digit ‘0’ or the digit ‘1’. When using the bit to represent the states of a two-state system, you use the ‘0’ bit to represent one state and the ‘1’ bit to represent the other state. It has been the convention to use the bit to represent states of a two-state system. On the table above, it is often the case that state <span class="math notranslate nohighlight">\(A\)</span> is represented by the ‘0’ bit while state <span class="math notranslate nohighlight">\(B\)</span> is represented by the ‘1’ bit. Using the bit, the table can be rewritten as:</p>
+<table>
+  <tr>
+    <th> Physical Medium   </th>
+    <th> Physical Property </th>
+    <th> State '0'         </th>
+    <th> State '1'         </th>
+  </tr>
+  <tr>
+    <td> Punched Card        </td>
+    <td> Existence of a Hole </td>
+    <td> No Hole       B      </td>
+    <td> Has a Hole          </td>
+  </tr>
+  <tr>
+    <td> Electronic Circuits </td>
+    <td> Voltage Level       </td>
+    <td> Low Voltage (~0V)   </td>
+    <td> High Voltage (~5V)  </td>
+  </tr>
+  <tr>
+    <td> Flash Memory Cell   </td>
+    <td> Cell Charge        </td>
+    <td> 'High' Charge      </td>
+    <td> No or 'Low' Charge </td>
+  </tr>
+  <tr>
+    <td> Magnetic Drive Cell </td>
+    <td> Magnetic Polarity   </td>
+    <td> South-North         </td>
+    <td> North-South         </td>
+  </tr>
+</table></section>
+<section id="bit-strings">
+<h2>Bit Strings<a class="headerlink" href="#bit-strings" title="Permalink to this heading">#</a></h2>
+<p>A <em>bit string</em> is simply a string of bits. e.g. <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(01\)</span>, <span class="math notranslate nohighlight">\(111\)</span>, <span class="math notranslate nohighlight">\(0001\)</span>. Bit string are used to encode information and the amount of information a bit string holds is the number of bits it has. The number of bits a bit string has is its <em>length</em>. i.e. The string <span class="math notranslate nohighlight">\(10010\)</span> is bit string with 5 bits of information. It is a bit string of length <span class="math notranslate nohighlight">\(5\)</span>. Most digital data today like pictures, audio, video, and files are stored as bit strings (aka binary strings). In order to represent a bit string, you need multiple two-state systems with each system holding one bit of information. For example, a magnetic drive with a 1-gigabyte (1GB) capacity stores a bit string of length 8 billion (1 byte = 8 bits, 1 gigabyte = <span class="math notranslate nohighlight">\(1000^3\)</span> bytes) so you need 8 billion two-state systems and for magnetic drives these two-state systems are magnetic drive cells where each cell is a ‘magnetic domain’ with a specific magnetic orientation that represent either ‘0’ or ‘1’.</p>
+<p>The set of symbols <span class="math notranslate nohighlight">\(\Sigma = \{0,1\}\)</span> is called the <em>alphabet</em> of bit strings. The set <span class="math notranslate nohighlight">\(\Sigma^*\)</span> (pronounced as “Sigma star”) is the set of all bit strings (of any lenth). i.e. <span class="math notranslate nohighlight">\(\Sigma^* = \{\varepsilon, 0, 1, 00, 01, 10, 11, 000, 001, ...\}\)</span>. The <span class="math notranslate nohighlight">\(\varepsilon\)</span> (or sometimes <span class="math notranslate nohighlight">\(\lambda\)</span>) symbol is used for the “empty string”, the bit string of length 0. The set <span class="math notranslate nohighlight">\(\Sigma^+\)</span> (pronounced as “Sigma plus”) is the set of all bitstring excluding the empty string <span class="math notranslate nohighlight">\(\varepsilon\)</span>. The set <span class="math notranslate nohighlight">\(\Sigma^n\)</span> is the set of bit strings of length <span class="math notranslate nohighlight">\(n\)</span>. i.e. <span class="math notranslate nohighlight">\(\Sigma^2 = \{00, 01,10, 11\}\)</span>. The <em>concatenation</em> operation is a binary operation that strings two bit strings together. i.e. Let <span class="math notranslate nohighlight">\(B_1\)</span> and <span class="math notranslate nohighlight">\(B_2\)</span> be bits strings, the the concatentation of <span class="math notranslate nohighlight">\(B_1\)</span> with <span class="math notranslate nohighlight">\(B_2\)</span>, denoted by <span class="math notranslate nohighlight">\(B_1 | B_2\)</span>, is simply <span class="math notranslate nohighlight">\(B_1B_2\)</span>. e.g. If <span class="math notranslate nohighlight">\(B_1 = 111\)</span> and <span class="math notranslate nohighlight">\(B_2 = 00100\)</span>, then <span class="math notranslate nohighlight">\(B_1 | B_ 2 = B_1B_2 = 11100100\)</span>.</p>
+</section>
+<section id="two-state-quantum-systems-and-the-quantum-bit">
+<h2>Two-State Quantum Systems and the Quantum Bit<a class="headerlink" href="#two-state-quantum-systems-and-the-quantum-bit" title="Permalink to this heading">#</a></h2>
+<p>In a two-state quantum system, similar to a two-state classical system, if you observe the system you will ‘see’ it in either one of two definite states.  Let <span class="math notranslate nohighlight">\(\{\ket{A}, \ket{B}\}\)</span> be the set of observable abstract states. i.e. The system can be observed to be either in state <span class="math notranslate nohighlight">\(\ket{A}\)</span> or in state <span class="math notranslate nohighlight">\(\ket{B}\)</span>.</p>
+<p>An abstract two-state system can be implemented in different physical media as long as the physical medium can represent the two abstract states <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. To implement an abstract two-state system (with abstract states <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>) in a physical medium, we use a property of the medium that can have two possible values. One value will represent the abstract state <span class="math notranslate nohighlight">\(A\)</span> while the other value will represent abstract state <span class="math notranslate nohighlight">\(B\)</span>. The table below shows some physical media and the physical properties and values used to represent the two abstract states <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<div align="center">
+  <img   src="coin-toss.gif" 
+         alt="coin toss"
+       align="center"
+       width="300" />
+</div>
+<p>Algebraic representation of the quantum state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> using the basis <span class="math notranslate nohighlight">\(\{\ket{0}, \ket{1}\}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{\psi} = \alpha \ket{0} + \beta \ket{1} 
+\]</div>
+<p>In a two-level system with basis states <span class="math notranslate nohighlight">\(\{\ket{0}, \ket{1}\}\)</span>, by observing the system you will either see that system in state <span class="math notranslate nohighlight">\(\ket{0}\)</span> or in state <span class="math notranslate nohighlight">\(\ket{1}\)</span>. The state
+<span class="math notranslate nohighlight">\(\ket{\psi} = \alpha \ket{0} + \beta \ket{1}\)</span> is not an actual state that you can observe but it gives you information about the probability of seeing the system in state
+<span class="math notranslate nohighlight">\(\ket{0}\)</span> and the probability of seeing the system in state <span class="math notranslate nohighlight">\(\ket{1}\)</span> if you observe the system. The <span class="math notranslate nohighlight">\(\alpha\)</span> in <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> is called the <i>amplitude</i> of the basis
+state <span class="math notranslate nohighlight">\(\ket{0}\)</span> while the <span class="math notranslate nohighlight">\(\beta\)</span> in <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> is amplitude of basis state <span class="math notranslate nohighlight">\(\ket{1}\)</span>. The amplitudes associated with the basis state tells you about the probability associated with seeing the particular basis state if observe the system. Getting the square of the amplitude of the a basis state (technically, getting the square modulus) will give you the probability of seeing that basis state if you observe the system. i.e. <span class="math notranslate nohighlight">\(|\alpha|^2\)</span> is the probability of seeing the basis state <span class="math notranslate nohighlight">\(\ket{0}\)</span> while <span class="math notranslate nohighlight">\(|\beta|^2\)</span> is the probability of seeing the basis <span class="math notranslate nohighlight">\(\ket{1}\)</span>.</p>
+<section id="qubit-examples">
+<h3>Qubit Examples<a class="headerlink" href="#qubit-examples" title="Permalink to this heading">#</a></h3>
+<ol>
+    <li> $\ket{\psi} = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}$. The amplitude associate with basis state $\ket{0}$ is $\alpha=\frac{1}{\sqrt{2}}$ and squaring it will give you the probability of seeing $\ket{0}$ which is $|\frac{1}{\sqrt{2}}|^2 = \frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}} = \frac{1}{2}$. The amplitude associate with basis statet $\ket{1}$ is $\beta=\frac{1}{\sqrt{2}}$ and squaring it will give you the probability of seeing $\ket{1}$ which is $|\frac{1}{\sqrt{2}}|^2 = \frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}} = \frac{1}{2}$. There is an equal probability (both $\frac{1}{2})$ of seeing the state $\ket{0}$ or seeing the state $\ket{1}$.</li>
+    <li> $fsfs$ </li>
+    <li> $fsfs$ </li>
+    <li> $fsfs$ </li>
+</ol>
+</section>
+<section id="born-rule">
+<h3>Born Rule<a class="headerlink" href="#born-rule" title="Permalink to this heading">#</a></h3>
+<h4 align="center"> Max Born</h4>
+<div align="center">
+<a href="https://en.wikipedia.org/wiki/Max_Born">
+  <img   src="quantum-state-representations.svg" 
+         alt="Max Born"
+       align="center"
+       width="300" />
+</a>
+</div>
+<p>The  <i>”Born Rule”</i> is a postulate in quantum mechanics that states the probability density of finding a system in a given state, when measured, is proportional to the square of the amplitude of the system’s wavefunction at that particular state. If you have a state <span class="math notranslate nohighlight">\(\ket{\psi} = \alpha \ket{0} + \beta \ket{1}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\text{Born Rule:   }|\alpha|^2 + |\beta|^2 = 1
+\]</div>
+</section>
+<section id="vector-representations-of-qubit-states">
+<h3>Vector Representations of Qubit States<a class="headerlink" href="#vector-representations-of-qubit-states" title="Permalink to this heading">#</a></h3>
+<p>Vector representation of the quantum state <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\ket{\psi} =
+\begin{bmatrix} 
+\alpha \\
+\beta 
+\end{bmatrix} = 
+\alpha
+\begin{bmatrix} 
+1 \\
+0 
+\end{bmatrix} +
+\beta
+\begin{bmatrix} 
+0 \\
+1 
+\end{bmatrix}
+\end{split}\]</div>
+</section>
+<section id="physical-realizations-of-qubit-states">
+<h3>Physical Realizations of Qubit States<a class="headerlink" href="#physical-realizations-of-qubit-states" title="Permalink to this heading">#</a></h3>
+<table>
+  <tr>
+    <th> Physical Medium   </th>Quantum
+    <th> Physical Property </th>
+    <th> $\ket{0}$         </th>
+    <th> $\ket{1}$         </th>
+  </tr>
+  <tr>
+    <td> Electron      </td>
+    <td> Electron Spin </td>
+    <td> Spin Up       </td>
+    <td> Spin Down     </td>
+  </tr>
+  <tr>
+    <td> Nucleas       </td>
+    <td> Nuclear Spin  </td>
+    <td> Spin Up       </td>
+    <td> Spin Down     </td>
+  </tr>
+  <tr>
+    <td> Light        </td>
+    <td> Polarization </td>
+    <td> Horizontal   </td>
+    <td> Vertical     </td>
+  </tr>
+  <tr>
+    <td> Light                    </td>
+    <td> Squeezed Coherent State  </td>
+    <td> Horizontal               </td>
+    <td> Vertical                 </td>
+  </tr>
+</table><div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} 
+\ket{\psi} &amp;=
+\begin{bmatrix} 
+\alpha \\
+\beta 
+\end{bmatrix}\\ &amp;= 
+\alpha
+\begin{bmatrix} 
+1 \\
+0 
+\end{bmatrix} +
+\beta
+\begin{bmatrix} 
+0 \\
+1 
+\end{bmatrix}
+\end{align*}\end{split}\]</div>
+<hr>
+</section>
+</section>
+<section id="qutrit-qudit-states">
+<h2>Qutrit &amp; Qudit States<a class="headerlink" href="#qutrit-qudit-states" title="Permalink to this heading">#</a></h2>
+<hr>
+</section>
+<section id="multi-qubit-states">
+<h2>Multi-qubit States<a class="headerlink" href="#multi-qubit-states" title="Permalink to this heading">#</a></h2>
+<section id="example-1-qubit-1-0-qubit-2-0">
+<h3>Example 1 (<span class="math notranslate nohighlight">\(Qubit_1 = 0\)</span>, <span class="math notranslate nohighlight">\(Qubit_2 = 0\)</span>):<a class="headerlink" href="#example-1-qubit-1-0-qubit-2-0" title="Permalink to this heading">#</a></h3>
+<p>State of <span class="math notranslate nohighlight">\(Qubit_1\)</span>:
+$<span class="math notranslate nohighlight">\(\ket{\psi} = \ket{0} = 1 \ket{0} + 0 \ket{1} = 
+\begin{bmatrix} 
+1 \\
+0 
+\end{bmatrix}
+\)</span>$</p>
+<p>State of <span class="math notranslate nohighlight">\(Qubit_2\)</span>:
+$<span class="math notranslate nohighlight">\(\ket{\phi} = \ket{0} = 1 \ket{0} + 0 \ket{1} = 
+\begin{bmatrix} 
+1 \\
+0 
+\end{bmatrix}
+\)</span>$</p>
+<p>Combined State of Qubit 1 and Qubit 2:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}
+\begin{align*} \\\begin{split}\ket{X} &amp;= \ket{\psi} \otimes \ket{\phi}\\ 
+        &amp;= \ket{0} \otimes \ket {0} \\
+        &amp;= \ket{00} \\
+        &amp;=\begin{bmatrix} 
+1 \\
+0 
+\end{bmatrix} \otimes
+\begin{bmatrix} 
+1 \\
+0 
+\end{bmatrix}\\ &amp;= 
+\begin{bmatrix} 
+1 \begin{bmatrix} 
+   1 \\
+   0 
+   \end{bmatrix}
+\\
+0 \begin{bmatrix} 
+   1 \\
+   0 
+   \end{bmatrix}  
+\end{bmatrix} = 
+\begin{bmatrix} 
+   1 \cdot 1 \\
+   1 \cdot 0 \\
+   0 \cdot 1 \\
+   0 \cdot 0
+   \end{bmatrix} =
+\begin{bmatrix} 
+   1 \\
+   0 \\
+   0 \\
+   0 
+   \end{bmatrix} 
+\end{align*}\end{split}\end{aligned}\end{align} \]</div>
+</section>
+<section id="example-2-qubit-1-0-qubit-2-1">
+<h3>Example 2 (<span class="math notranslate nohighlight">\(Qubit_1 = 0\)</span>, <span class="math notranslate nohighlight">\(Qubit_2 = 1\)</span>):<a class="headerlink" href="#example-2-qubit-1-0-qubit-2-1" title="Permalink to this heading">#</a></h3>
+<p>State of <span class="math notranslate nohighlight">\(Qubit_1\)</span>:
+$<span class="math notranslate nohighlight">\(\ket{\psi} = \ket{0} = 1 \ket{0} + 0 \ket{1} = 
+\begin{bmatrix} 
+1 \\
+0 
+\end{bmatrix}
+\)</span>$</p>
+<p>State of <span class="math notranslate nohighlight">\(Qubit_2\)</span>:
+$<span class="math notranslate nohighlight">\(\ket{\phi} = \ket{1} = 0 \ket{0} + 1 \ket{1} = 
+\begin{bmatrix} 
+0 \\
+1 
+\end{bmatrix}
+\)</span>$</p>
+<p>Combined State of Qubit 1 and Qubit 2:
+$<span class="math notranslate nohighlight">\(\ket{X} = \ket{\psi} \otimes \ket{\phi} = \ket{0} \otimes \ket {1} = \ket{01} =
+\begin{bmatrix} 
+1 \\
+0 
+\end{bmatrix} \otimes
+\begin{bmatrix} 
+0 \\
+1 
+\end{bmatrix} = 
+\begin{bmatrix} 
+1 \begin{bmatrix} 
+   0 \\
+   1 
+   \end{bmatrix}
+\\
+0 \begin{bmatrix} 
+   0 \\
+   1 
+   \end{bmatrix}  
+\end{bmatrix} = 
+\begin{bmatrix} 
+   1 \cdot 0 \\
+   1 \cdot 1 \\
+   0 \cdot 0 \\
+   0 \cdot 1
+   \end{bmatrix} =
+\begin{bmatrix} 
+   0 \\
+   1 \\
+   0 \\
+   0 
+   \end{bmatrix} 
+\)</span>$</p>
+</section>
+<section id="example-3-qubit-1-1-qubit-2-0">
+<h3>Example 3 (<span class="math notranslate nohighlight">\(Qubit_1 = 1\)</span>, <span class="math notranslate nohighlight">\(Qubit_2 = 0\)</span>):<a class="headerlink" href="#example-3-qubit-1-1-qubit-2-0" title="Permalink to this heading">#</a></h3>
+<p>State of <span class="math notranslate nohighlight">\(Qubit_1\)</span>:
+$<span class="math notranslate nohighlight">\(\ket{\psi} = \ket{1} = 0 \ket{0} + 1 \ket{1} = 
+\begin{bmatrix} 
+1 \\
+0 
+\end{bmatrix}
+\)</span>$</p>
+<p>State of <span class="math notranslate nohighlight">\(Qubit_2\)</span>:
+$<span class="math notranslate nohighlight">\(\ket{\phi} = \ket{0} = 1 \ket{0} + 0 \ket{1} = 
+\begin{bmatrix} 
+0 \\
+1 
+\end{bmatrix}
+\)</span>$</p>
+<p>Combined State of Qubit 1 and Qubit 2:
+$<span class="math notranslate nohighlight">\(\ket{X} = \ket{\psi} \otimes \ket{\phi} = \ket{1} \otimes \ket {0} = \ket{10} =
+\begin{bmatrix} 
+0 \\
+1 
+\end{bmatrix} \otimes
+\begin{bmatrix} 
+1 \\
+0 
+\end{bmatrix} = 
+\begin{bmatrix} 
+0 \begin{bmatrix} 
+   1 \\
+   0 
+   \end{bmatrix}
+\\
+1 \begin{bmatrix} 
+   1 \\
+   0 
+   \end{bmatrix}  
+\end{bmatrix} = 
+\begin{bmatrix} 
+   0 \cdot 1 \\
+   0 \cdot 0 \\
+   1 \cdot 1 \\
+   1 \cdot 0
+   \end{bmatrix} =
+\begin{bmatrix} 
+   0 \\
+   0 \\
+   1 \\
+   0 
+   \end{bmatrix} 
+\)</span>$</p>
+</section>
+<section id="example-4-qubit-1-1-qubit-2-1">
+<h3>Example 4 (<span class="math notranslate nohighlight">\(Qubit_1 = 1\)</span>, <span class="math notranslate nohighlight">\(Qubit_2 = 1\)</span>):<a class="headerlink" href="#example-4-qubit-1-1-qubit-2-1" title="Permalink to this heading">#</a></h3>
+<p>State of <span class="math notranslate nohighlight">\(Qubit_1\)</span>:
+$<span class="math notranslate nohighlight">\(\ket{\psi} = \ket{1} = 0 \ket{0} + 1 \ket{1} = 
+\begin{bmatrix} 
+1 \\
+0 
+\end{bmatrix}
+\)</span>$</p>
+<p>State of <span class="math notranslate nohighlight">\(Qubit_2\)</span>:
+$<span class="math notranslate nohighlight">\(\ket{\phi} = \ket{1} = 0 \ket{0} + 1 \ket{1} = 
+\begin{bmatrix} 
+0 \\
+1 
+\end{bmatrix}
+\)</span>$</p>
+<p>Combined State of Qubit 1 and Qubit 2:
+$<span class="math notranslate nohighlight">\(\ket{X} = \ket{\psi} \otimes \ket{\phi} = \ket{1} \otimes \ket {1} = \ket{11} =
+\begin{bmatrix} 
+0 \\
+1 
+\end{bmatrix} \otimes
+\begin{bmatrix} 
+0 \\
+1 
+\end{bmatrix} = 
+\begin{bmatrix} 
+0 \begin{bmatrix} 
+   0 \\
+   1 
+   \end{bmatrix}
+\\
+1 \begin{bmatrix} 
+   0 \\
+   1 
+   \end{bmatrix}  
+\end{bmatrix} = 
+\begin{bmatrix} 
+   0 \cdot 0 \\
+   0 \cdot 1 \\
+   1 \cdot 0 \\
+   1 \cdot 1
+   \end{bmatrix} =
+\begin{bmatrix} 
+   0 \\
+   0 \\
+   0 \\
+   1 
+   \end{bmatrix} 
+\)</span>$</p>
+</section>
+<section id="generic">
+<h3>Generic :<a class="headerlink" href="#generic" title="Permalink to this heading">#</a></h3>
+<p>State of <span class="math notranslate nohighlight">\(Qubit_1\)</span>:
+$<span class="math notranslate nohighlight">\(\ket{\psi} = \ket{1} = \alpha \ket{0} + \beta \ket{1} = 
+\begin{bmatrix} 
+\alpha \\
+\beta 
+\end{bmatrix}
+\)</span>$</p>
+<p>State of <span class="math notranslate nohighlight">\(Qubit_2\)</span>:
+$<span class="math notranslate nohighlight">\(\ket{\phi} = \ket{1} = \gamma \ket{0} + \delta \ket{1} = 
+\begin{bmatrix} 
+\gamma \\
+\sigma 
+\end{bmatrix}
+\)</span>$</p>
+<p>Combined State of Qubit 1 and Qubit 2:
+$<span class="math notranslate nohighlight">\(\ket{X} = \ket{\psi} \otimes \ket{\phi} = (\alpha \ket{0} + \beta \ket{1}) \otimes (\gamma \ket{0} + \delta \ket{1}) =
+\begin{bmatrix} 
+\alpha \\
+\beta 
+\end{bmatrix} \otimes
+\begin{bmatrix} 
+\gamma \\
+\delta 
+\end{bmatrix} = 
+\begin{bmatrix} 
+\alpha \begin{bmatrix} 
+   \gamma \\
+   \delta 
+   \end{bmatrix}
+\\
+\beta \begin{bmatrix} 
+   \gamma \\
+   \delta 
+   \end{bmatrix}  
+\end{bmatrix} = 
+\begin{bmatrix} 
+   \alpha \cdot \gamma \\
+   \alpha \cdot \delta \\
+   \beta \cdot \gamma \\
+   \beta \cdot \delta
+   \end{bmatrix} =
+\begin{bmatrix} 
+   \alpha\gamma \\
+   \alpha\delta \\
+   \beta\gamma \\
+   \beta\delta 
+   \end{bmatrix} =
+   \alpha\gamma\ket{00} + \alpha\delta\ket{01} + \beta\gamma\ket{10} + \beta\delta\ket{11}
+\)</span>$</p>
+<hr>
+</section>
+</section>
+<section id="entanglement-of-multiple-qubits">
+<h2>Entanglement of Multiple Qubits<a class="headerlink" href="#entanglement-of-multiple-qubits" title="Permalink to this heading">#</a></h2>
+<p>The state of a 3-qubit system where no qubits are entangled.</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{\psi} =  \frac{1}{\sqrt{8}} \ket{000} +  
+              \frac{1}{\sqrt{8}} \ket{001} +
+              \frac{1}{\sqrt{8}} \ket{010} + 
+              \frac{1}{\sqrt{8}} \ket{011} + 
+              \frac{1}{\sqrt{8}} \ket{100} + 
+              \frac{1}{\sqrt{8}} \ket{101} + 
+              \frac{1}{\sqrt{8}} \ket{110} +  
+              \frac{1}{\sqrt{8}} \ket{111}
+\]</div>
+<div align="center">
+  <img   src="binary-numbers-8.png" 
+         alt="3-bit Binary Numbers"
+       align="center"
+       width="700" />
+</div>
+<p>Possible observed states of a 3-qubit system where qubit <span class="math notranslate nohighlight">\(q_1\)</span> and qubit <span class="math notranslate nohighlight">\(q_3\)</span> are entangled in the following manner <span class="math notranslate nohighlight">\(q_1 = q_3\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{\psi} =  \Bigg(\frac{\sqrt{2}}{\sqrt{8}} \ket{000} +  
+                           \frac{0}{\sqrt{8}} \ket{001} +
+                    \frac{\sqrt{2}}{\sqrt{8}} \ket{010} + 
+                           \frac{0}{\sqrt{8}} \ket{011} +
+                           \frac{0}{\sqrt{8}} \ket{100} +
+                    \frac{\sqrt{2}}{\sqrt{8}} \ket{101} + 
+                           \frac{0}{\sqrt{8}} \ket{110} + 
+                    \frac{\sqrt{2}}{\sqrt{8}} \ket{111} \Bigg) =
+              \Bigg(\frac{\sqrt{2}}{\sqrt{8}} \ket{000} +  
+                    \frac{\sqrt{2}}{\sqrt{8}} \ket{010} + 
+                    \frac{\sqrt{2}}{\sqrt{8}} \ket{101} +
+                    \frac{\sqrt{2}}{\sqrt{8}} \ket{111}\Bigg) =
+              \Bigg(\frac{1}{\sqrt{4}} \ket{000} +  
+                    \frac{1}{\sqrt{4}} \ket{010} + 
+                    \frac{1}{\sqrt{4}} \ket{101} +
+                    \frac{1}{\sqrt{4}} \ket{111}\Bigg) 
+\]</div>
+<div align="center">
+  <img   src="binary-numbers-8-entangled.png" 
+         alt="3-bit Binary Numbers"
+       align="center"
+       width="700" />
+</div>
+<p>Possible observed states of a 3-qubit system where qubit <span class="math notranslate nohighlight">\(q_1\)</span> and qubit <span class="math notranslate nohighlight">\(q_3\)</span> are entangled in the following manner <span class="math notranslate nohighlight">\(q_2 = NOT(q_1)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{\psi} =  \Bigg(\frac{0}{\sqrt{8}} \ket{000} +  
+                    \frac{0}{\sqrt{8}} \ket{001} +
+                    \frac{\sqrt{2}}{\sqrt{8}} \ket{010} +  
+                    \frac{\sqrt{2}}{\sqrt{8}} \ket{011} +
+                    \frac{\sqrt{2}}{\sqrt{8}} \ket{100} +  
+                    \frac{\sqrt{2}}{\sqrt{8}} \ket{101} +
+                    \frac{0}{\sqrt{8}} \ket{110} +  
+                    \frac{0}{\sqrt{8}} \ket{111} \Bigg) =
+              \Bigg(\frac{\sqrt{2}}{\sqrt{8}} \ket{010} +  
+                    \frac{\sqrt{2}}{\sqrt{8}} \ket{011} + 
+                    \frac{\sqrt{2}}{\sqrt{8}} \ket{100} +
+                    \frac{\sqrt{2}}{\sqrt{8}} \ket{101}\Bigg) =
+              \Bigg(\frac{1}{\sqrt{4}} \ket{010} +  
+                    \frac{1}{\sqrt{4}} \ket{011} + 
+                    \frac{1}{\sqrt{4}} \ket{100} +
+                    \frac{1}{\sqrt{4}} \ket{101}\Bigg) 
+\]</div>
+<div align="center">
+  <img   src="binary-numbers-8-entangled-2.png" 
+         alt="3-bit Binary Numbers"
+       align="center"
+       width="700" />
+</div>
+<p>Maximally entangled 3-qubit state.</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{\psi} =  \Bigg(\frac{2}{\sqrt{8}} \ket{000} +  
+                    \frac{0}{\sqrt{8}} \ket{001} +
+                    \frac{0}{\sqrt{8}} \ket{010} + 
+                    \frac{0}{\sqrt{8}} \ket{011} + 
+                    \frac{0}{\sqrt{8}} \ket{100} + 
+                    \frac{0}{\sqrt{8}} \ket{101} + 
+                    \frac{0}{\sqrt{8}} \ket{110} +  
+                    \frac{2}{\sqrt{8}} \ket{111}\Bigg) =
+              \Bigg(\frac{2}{\sqrt{8}} \ket{000} +  
+                    \frac{2}{\sqrt{8}} \ket{111}\Bigg) =
+              \Bigg(\frac{1}{\sqrt{2}} \ket{000} +  
+                    \frac{1}{\sqrt{2}} \ket{111}\Bigg)
+\]</div>
+<div align="center">
+  <img   src="binary-numbers-8-entangled-3.png" 
+         alt="3-bit Binary Numbers"
+       align="center"
+       width="700" />
+</div><hr>
+</section>
+<section id="quick-summary-for-reference">
+<h2>Quick Summary for Reference<a class="headerlink" href="#quick-summary-for-reference" title="Permalink to this heading">#</a></h2>
+<ol>
+<li> Basis states - set of states</li>
+<li> $\ket{\psi} = \alpha\ket{0} + \beta\ket{1}$
+<table>
+  <tr>
+    <th> Thing </th>
+    <th> Description</th>
+  </tr>
+  <tr>
+    <td> $\ket{\psi} = \alpha\ket{0} + \beta\ket{1}$</td>
+    <td> A general (in superposition) qubit state  </td>
+  </tr>
+  <tr>
+    <td> $\alpha$ </td>
+    <td> amplitude associate with basis state $\ket{0}$ </td>
+  </tr>
+  <tr>
+    <td> $|\alpha|^2$ </td>
+    <td> probability of observing the basis state $\ket{0}$ </td>
+  </tr>
+  <tr>
+    <td> $\beta$ </td>
+    <td> amplitude associate with basis state $\ket{1}$ </td>
+  </tr>
+  <tr>
+    <td> $|\beta|^2$ </td>
+    <td> probability of observing the basis state $\ket{1}$ </td>
+  </tr>
+    <tr>
+    <td> $|\alpha|^2 + |\beta|^2 = 1$ </td>
+    <td> The Born rule restriction on values o
+        f $\alpha$ and $\beta$ </td>
+  </tr>
+</table>
+</li>
+</ol>
+<hr>
+</section>
+<section id="quiz">
+<h2>Quiz<a class="headerlink" href="#quiz" title="Permalink to this heading">#</a></h2>
+<ol>
+    <li></li>
+    <li> Prove that the Born Rule still holds combined state $(\ket{\psi} \otimes \ket{\phi})$ after applying the tensor product on states $\ket{\psi} = (\alpha\ket{0} + \beta\ket{1})$ and $\ket{\phi}=(\gamma\ket{0} + \delta\ket{1}).$ i.e. Prove the probabilities of all possible observable states,
+    , $\ket{00}, \ket{01}, \ket{10}, \ket{11}$, add up to 1. </li>
+</ol><hr>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<ol>
+<li>  <a href="https://www.google.com"> two level </a> </li>
+<li> fdsfsf </li>
+<li> fsdfsd </li>
+</ol></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="markdown.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Markdown Files</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="markdown-notebooks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content-outline">Content Outline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-state-classical-systems-and-the-classical-bit">Two-state Classical Systems and the Classical Bit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-strings">Bit Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-state-quantum-systems-and-the-quantum-bit">Two-State Quantum Systems and the Quantum Bit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qubit-examples">Qubit Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#born-rule">Born Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-representations-of-qubit-states">Vector Representations of Qubit States</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#physical-realizations-of-qubit-states">Physical Realizations of Qubit States</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qutrit-qudit-states">Qutrit &amp; Qudit States</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-qubit-states">Multi-qubit States</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-qubit-1-0-qubit-2-0">Example 1 (<span class="math notranslate nohighlight">\(Qubit_1 = 0\)</span>, <span class="math notranslate nohighlight">\(Qubit_2 = 0\)</span>):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-qubit-1-0-qubit-2-1">Example 2 (<span class="math notranslate nohighlight">\(Qubit_1 = 0\)</span>, <span class="math notranslate nohighlight">\(Qubit_2 = 1\)</span>):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-qubit-1-1-qubit-2-0">Example 3 (<span class="math notranslate nohighlight">\(Qubit_1 = 1\)</span>, <span class="math notranslate nohighlight">\(Qubit_2 = 0\)</span>):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4-qubit-1-1-qubit-2-1">Example 4 (<span class="math notranslate nohighlight">\(Qubit_1 = 1\)</span>, <span class="math notranslate nohighlight">\(Qubit_2 = 1\)</span>):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generic">Generic :</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entanglement-of-multiple-qubits">Entanglement of Multiple Qubits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-summary-for-reference">Quick Summary for Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quiz">Quiz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
