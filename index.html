@@ -1,1 +1,225 @@
-Hello world!
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Ren Tristan A. de la Cruz" />
+  <title> Quantum States for Quantum Computing </title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title"> Quantum States for Quantum Computing </h1>
+<p class="author">Ren Tristan A. de la Cruz</p>
+</header>
+<h1 id="classical-bit">Classical Bit</h1>
+<p>An abstract <em>two-state classical</em> system is any system that can be in one of <em>two</em> possible abstract states. Let <span class="math inline">{<em>A</em>, <em>B</em>}</span> be the set of possible abstract states. i.e. The system is either in state <span class="math inline"><em>A</em></span> or in state <span class="math inline"><em>B</em></span>. An abstract two-state system can be implemented in different physical media as long as the physical medium can represent the two abstract states <span class="math inline"><em>A</em></span> and <span class="math inline"><em>B</em></span>. To implement an abstract two-state system (with abstract states <span class="math inline"><em>A</em></span> and <span class="math inline"><em>B</em></span>) in a physical medium, we use a property of the medium that can have two possible values. One value will represent the abstract state <span class="math inline"><em>A</em></span> while the other value will represent abstract state <span class="math inline"><em>B</em></span>. The table below shows some physical media and the physical properties and values used to represent the two abstract states <span class="math inline"><em>A</em></span> and <span class="math inline"><em>B</em></span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><span>Physical Medium</span></strong></th>
+<th style="text-align: center;"><strong><span>Physical Property</span></strong></th>
+<th style="text-align: center;"><strong><span>State <span class="math inline"><em>A</em></span></span></strong></th>
+<th style="text-align: center;"><strong><span>State <span class="math inline"><em>B</em></span></span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Punched Card</td>
+<td style="text-align: center;">Existence of a Hole</td>
+<td style="text-align: center;">No Hole</td>
+<td style="text-align: center;">Has a Hole</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Electronic Circuit</td>
+<td style="text-align: center;">Voltage Level</td>
+<td style="text-align: center;">Low (<span class="math inline">≈</span> 0V)</td>
+<td style="text-align: center;">High (<span class="math inline">≈</span> 5V)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Flash Memory Cell</td>
+<td style="text-align: center;">Cell Charge</td>
+<td style="text-align: center;">‘High’ Charge</td>
+<td style="text-align: center;">No or ‘Low’ Charge</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Magnetic Drive Cell</td>
+<td style="text-align: center;">Magnetic Polarity</td>
+<td style="text-align: center;">South-North</td>
+<td style="text-align: center;">North-South</td>
+</tr>
+</tbody>
+</table>
+<p>The <em>bit</em>, the most basic unit of information in computing, is the amount of information you gain if the actual state of a two-state system is revealed to you (when the system has an equal chance of being in state <span class="math inline"><em>A</em></span> or being in state <span class="math inline"><em>B</em></span>). It is the same amount of information you gain when you get an answer to a yes/no question when there is an equal chance of getting a ’yes’ or getting a ’no’ answer. The term ’bit’ stands for "binary digit" or "binary information digit". A bit can either be the digit ’0’ or the digit ’1’. When using the bit to represent the states of a two-state system, you use the ’0’ bit to represent one state and the ’1’ bit to represent the other state. It has been the convention to use the bit to represent states of a two-state system. On the table above, it is often the case that state <span class="math inline"><em>A</em></span> is represented by the ’0’ bit while state <span class="math inline"><em>B</em></span> is represented by the ’1’ bit.</p>
+<p>A <em>bit string</em> is simply a string of bits. e.g. <span class="math inline">1</span>, <span class="math inline">01</span>, <span class="math inline">111</span>, <span class="math inline">0001</span>. Bit string are used to encode information and the amount of information a bit string holds is the number of bits it has. The number of bits a bit string has is its <em>length</em>. i.e. The string <span class="math inline">10010</span> is bit string with 5 bits of information. It is a bit string of length <span class="math inline">5</span>. Most digital data today like pictures, audio, video, and files are stored as bit strings (aka binary strings). In order to represent a bit string, you need multiple two-state systems with each system holding one bit of information. For example, a magnetic drive with a 1-gigabyte (1GB) capacity stores a bit string of length 8 billion ( 1 byte = 8 bits, 1 gigabyte = <span class="math inline">1000<sup>3</sup></span> bytes) so you need 8 billion two-state systems and for magnetic drives these two-state systems are magnetic drive cells where each cell is a ’magnetic domain’ with a specific magnetic orientation that represent either <span class="math inline">0</span> or <span class="math inline">1</span>.</p>
+<p>The set of symbols <span class="math inline"><em>Σ</em> = {0, 1}</span> is called the <em>alphabet</em> of bit strings. The set <span class="math inline"><em>Σ</em><sup>*</sup></span> (pronounced as "Sigma star") is the set of all bit strings (of any lenth). i.e. <span class="math inline"><em>Σ</em><sup>*</sup> = {<em>ε</em>, 0, 1, 00, 01, 10, 11, 000, 001, ...}</span>. The <span class="math inline"><em>ε</em></span> (or sometimes <span class="math inline"><em>λ</em></span>) symbol is used for the “empty string", the bit string of length 0. The set <span class="math inline"><em>Σ</em><sup>+</sup></span> (pronounced as "Sigma plus") is the set of all bitstring excluding the empty string <span class="math inline"><em>ε</em></span>. The set <span class="math inline"><em>Σ</em><sup><em>n</em></sup></span> is the set of bit strings of length <span class="math inline"><em>n</em></span>. i.e. <span class="math inline"><em>Σ</em><sup>2</sup> = {00, 01, 10, 11}</span>. The <em>concatenation</em> operation is a binary operation that strings two bit strings together. i.e. Let <span class="math inline"><em>B</em><sub>1</sub></span> and <span class="math inline"><em>B</em><sub>2</sub></span> be bits strings, the the concatentation of <span class="math inline"><em>B</em><sub>1</sub></span> with <span class="math inline"><em>B</em><sub>2</sub></span>, denoted by <span class="math inline"><em>B</em><sub>1</sub>|<em>B</em><sub>2</sub></span>, is simply <span class="math inline"><em>B</em><sub>1</sub><em>B</em><sub>2</sub></span>. e.g. If <span class="math inline"><em>B</em><sub>1</sub> = 111</span> and <span class="math inline"><em>B</em><sub>2</sub> = 00100</span>, then <span class="math inline"><em>B</em><sub>1</sub>|<em>B</em><sub>2</sub> = <em>B</em><sub>1</sub><em>B</em><sub>2</sub> = 11100100</span>.</p>
+<h1 id="quantum-bit">Quantum Bit</h1>
+<p>In a two-state quantum system, similar to a two-state classical system, if you observe the system you will ‘see’ it in either one of two definite states. Let <span class="math inline">$\{\ket{A}, \ket{B}\}$</span> be the set of observable states. i.e. The system can be observed to be either in state <span class="math inline">$\ket{A}$</span> or in state <span class="math inline">$\ket{B}$</span>.</p>
+<p>An abstract two-state system can be implemented in different physical media as long as the physical medium can represent the two abstract states <span class="math inline"><em>A</em></span> and <span class="math inline"><em>B</em></span>. To implement an abstract two-state system (with abstract states <span class="math inline"><em>A</em></span> and <span class="math inline"><em>B</em></span>) in a physical medium, we use a property of the medium that can have two possible values. One value will represent the abstract state <span class="math inline"><em>A</em></span> while the other value will represent abstract state <span class="math inline"><em>B</em></span>. The table below shows some physical media and the physical properties and values used to represent the two abstract states <span class="math inline"><em>A</em></span> and <span class="math inline"><em>B</em></span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong><span>Physical Medium</span></strong></th>
+<th style="text-align: center;"><strong><span>Physical Property</span></strong></th>
+<th style="text-align: center;"><strong><span>State <span class="math inline">$\ket{A}$</span></span></strong></th>
+<th style="text-align: center;"><strong><span>State <span class="math inline">$\ket{B}$</span></span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Electron</td>
+<td style="text-align: center;">Electron Spin</td>
+<td style="text-align: center;">Spin Up</td>
+<td style="text-align: center;">Spin Down</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Atomic Nucleaus</td>
+<td style="text-align: center;">Nuclear Spin</td>
+<td style="text-align: center;">Spin Up</td>
+<td style="text-align: center;">Spin Down</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Light</td>
+<td style="text-align: center;">Polarity</td>
+<td style="text-align: center;">Horizontal</td>
+<td style="text-align: center;">Vertical</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Light</td>
+<td style="text-align: center;">Squeezed Coherent State</td>
+<td style="text-align: center;">Horizontal</td>
+<td style="text-align: center;">Vertical</td>
+</tr>
+</tbody>
+</table>
+<h2 id="superposition">Superposition</h2>
+<p><br /><span class="math display">$$\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$$</span><br /></p>
+<p>Algebraic representation of the quantum state <span class="math inline">$\ket{\psi}$</span> using the basis <span class="math inline">$\{\ket{0}, \ket{1}\}$</span>:</p>
+<p>In a two-level system with basis states <span class="math inline">$\{\ket{0}, \ket{1}\}$</span>, by observing the system you will either see that system in state <span class="math inline">$\ket{0}$</span> or in state <span class="math inline">$\ket{1}$</span>. The state <span class="math inline">$\ket{\psi} = \alpha 
+\ket{0} + \beta \ket{1}$</span> is not an actual state that you can observe but it gives you information about the probability of seeing the system in state <span class="math inline">$\ket{0}$</span> and the probability of seeing the system in state <span class="math inline">$\ket{1}$</span> if you observe the system. The <span class="math inline"><em>α</em></span> in <span class="math inline">$\ket{\psi}$</span> is called the <em>amplitude</em> of the basis state <span class="math inline">$\ket{0}$</span> while the <span class="math inline"><em>β</em></span> in <span class="math inline">$\ket{\psi}$</span> is amplitude of basis state <span class="math inline">$\ket{1}$</span>. The amplitudes associated with the basis state tells you about the probability associated with seeing the particular basis state if observe the system. Getting the square of the amplitude of the a basis state (technically, getting the square modulus) will give you the probability of seeing that basis state if you observe the system. i.e. <span class="math inline">|<em>α</em>|<sup>2</sup></span> is the probability of seeing the basis state <span class="math inline">$\ket{0}$</span> while <span class="math inline">|<em>β</em>|<sup>2</sup></span> is the probability of seeing the basis <span class="math inline">$\ket{1}$</span>.</p>
+<p><strong>Born Rule</strong> <br /><span class="math display">|<em>α</em>|<sup>2</sup> + |<em>β</em>|<sup>2</sup> = 1</span><br /></p>
+<h2 id="qubit-examples">Qubit Examples</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"><strong><span><span class="math inline">$\ket{0}$</span></span></strong></td>
+<td style="text-align: center;"><strong><span><span class="math inline">$\ket{1}$</span></span></strong></td>
+<td style="text-align: center;"><strong><span><span class="math inline">$\ket{0}$</span></span></strong></td>
+<td style="text-align: center;"><strong><span><span class="math inline">$\ket{1}$</span></span></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">$\ket{\psi_1} = 1\ket{0} + 0\ket{1} = \ket{0}$</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+<td style="text-align: center;"><span class="math inline">0</span></td>
+<td style="text-align: center;"><span class="math inline">|1|<sup>2</sup> = 1</span></td>
+<td style="text-align: center;"><span class="math inline">|0|<sup>2</sup> = 0</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">$\ket{\psi_2} = 0\ket{0} + 1\ket{1} = \ket{1}$</span></td>
+<td style="text-align: center;"><span class="math inline">0</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+<td style="text-align: center;"><span class="math inline">|1|<sup>2</sup> = 1</span></td>
+<td style="text-align: center;"><span class="math inline">|0|<sup>2</sup> = 0</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">$\ket{\psi_3} = \frac{1}{\sqrt{2}}\ket{0} + \frac{1}{\sqrt{2}} \ket{1}$</span></td>
+<td style="text-align: center;"><span class="math inline">$\frac{1}{\sqrt{2}}$</span></td>
+<td style="text-align: center;"><span class="math inline">$\frac{1}{\sqrt{2}}$</span></td>
+<td style="text-align: center;"><span class="math inline">$|\frac{1}{\sqrt{2}}|^2 = \frac{1}{2}$</span></td>
+<td style="text-align: center;"><span class="math inline">$|\frac{1}{\sqrt{2}}|^2 = \frac{1}{2}$</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">$\ket{\psi_4} = \frac{1}{\sqrt{4}}\ket{0} + \frac{\sqrt{3}}{\sqrt{4}} \ket{1}$</span></td>
+<td style="text-align: center;"><span class="math inline">$\frac{1}{\sqrt{4}}$</span></td>
+<td style="text-align: center;"><span class="math inline">$\frac{\sqrt{3}}{\sqrt{4}}$</span></td>
+<td style="text-align: center;"><span class="math inline">$|\frac{1}{\sqrt{4}}|^2 = \frac{1}{4}$</span></td>
+<td style="text-align: center;"><span class="math inline">$|\frac{\sqrt{3}}{\sqrt{4}}|^2 = \frac{3}{4}$</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">$\ket{\psi_5} = \frac{\sqrt{5}}{\sqrt{8}}\ket{0} + \frac{\sqrt{3}}{\sqrt{8}} \ket{1}$</span></td>
+<td style="text-align: center;"><span class="math inline">$\frac{\sqrt{5}}{\sqrt{8}}$</span></td>
+<td style="text-align: center;"><span class="math inline">$\frac{\sqrt{3}}{\sqrt{8}}$</span></td>
+<td style="text-align: center;"><span class="math inline">$|\frac{\sqrt{5}}{\sqrt{8}}|^2 = \frac{5}{8}$</span></td>
+<td style="text-align: center;"><span class="math inline">$|\frac{\sqrt{3}}{\sqrt{8}}|^2 = \frac{3}{8}$</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="information-in-a-qubit">Information in a Qubit</h2>
+<h2 id="qubits-as-vectors">Qubits as Vectors</h2>
+<h2 id="visualizing-qubits-as-binary-trees">Visualizing Qubits as Binary Trees</h2>
+<h1 id="quantum-states">Quantum States</h1>
+<p><em>Tensor product</em></p>
+<p>Let the first qubit be <span class="math inline">$\ket{q_1}$</span>:</p>
+<p><br /><span class="math display">$$\ket{q_1} = \alpha \ket{0} + \beta \ket{1} 
+            = \begin{bmatrix}
+                \alpha \\
+                \beta
+               \end{bmatrix}$$</span><br /></p>
+<p>Let the second qubit be <span class="math inline">$\ket{q_2}$</span>:</p>
+<p><br /><span class="math display">$$\ket{q_2} = \gamma \ket{0} + \delta \ket{1}
+            = \begin{bmatrix}
+                \gamma \\
+                \delta
+              \end{bmatrix}$$</span><br /></p>
+<p>The tensor product of <span class="math inline">$\ket{q_1}$</span> and <span class="math inline">$\ket{q_2}$</span>, denoted by <span class="math inline">$\ket{q_1} \otimes \ket{q_2}$</span> (or simply <span class="math inline">$\ket{q_1q_2}$</span>), is computed as follows: <br /><span class="math display">$$\begin{aligned}
+\ket{q_1} \otimes \ket{q_2} &amp;= \ket{q_1q_2}  \\
+                            &amp;= (\alpha \ket{0} + \beta \ket{1})  \otimes 
+                               (\gamma \ket{0} + \delta\ket{1}) \\
+                            &amp;= [(\alpha \ket{0}) \otimes (\gamma \ket{0} + \delta \ket{1})] +
+                               [(\beta  \ket{1}) \otimes (\gamma \ket{0} + \delta \ket{1})] \\
+                            &amp;= [\alpha \gamma \ket{00} + \alpha \delta \ket{01}] + 
+                               [\beta  \gamma \ket{10} + \beta  \delta \ket{11}] \\ 
+                            &amp;= \alpha \gamma \ket{00} + \alpha \delta \ket{01} + 
+                               \beta  \gamma \ket{10} + \beta  \delta \ket{11} \\ \end{aligned}$$</span><br /></p>
+<p>As column vectors: <br /><span class="math display">$$\begin{aligned}
+\ket{q_1q_2} &amp;= \ket{q_1} \otimes \ket{q_2} \\
+             &amp;= \begin{bmatrix}
+                \alpha \\
+                \beta  
+                \end{bmatrix}
+                \otimes
+                \begin{bmatrix}
+                \gamma \\
+                \delta 
+                \end{bmatrix} \\
+             &amp;= \begin{bmatrix}
+                \alpha \begin{bmatrix}
+                       \gamma \\
+                       \delta
+                       \end{bmatrix} \\
+                \beta  \begin{bmatrix}
+                       \gamma \\
+                       \delta
+                       \end{bmatrix}
+                \end{bmatrix}
+              = \begin{bmatrix}
+                \alpha \cdot \gamma \\
+                \alpha \cdot \delta \\
+                \beta  \cdot \gamma \\
+                \beta \cdot \delta
+                \end{bmatrix} \\
+             &amp;= \begin{bmatrix}
+                \alpha \gamma \\
+                \alpha \delta \\
+                \beta  \gamma \\
+                \beta  \delta
+                \end{bmatrix}\end{aligned}$$</span><br /></p>
+<h1 id="quantum-state-entanglement">Quantum State Entanglement</h1>
+</body>
+</html>
