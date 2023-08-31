@@ -16,41 +16,41 @@
   src: local('CMU Serif Roman'), url('resources/computer-modern/cmunrm.woff') format('woff');
 }
     
-
-    @font-face {
-    font-family: 'CMU Serif Italic';
-    font-style: normal;
-    font-weight: normal;
-    src: local('CMU Serif Italic'), url('cmunti.woff') format('woff');
-    }
+@font-face
+{
+  font-family: 'CMU Serif Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('CMU Serif Italic'), url('resources/computer-modern/cmunti.woff') format('woff');
+}
     
+@font-face 
+{
+  font-family: 'CMU Serif Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('CMU Serif Bold'), url('resources/computer-modern/cmunbx.woff') format('woff');
+}
 
-    @font-face {
-    font-family: 'CMU Serif Bold';
-    font-style: normal;
-    font-weight: normal;
-    src: local('CMU Serif Bold'), url('cmunbx.woff') format('woff');
-    }
-    
-
-    @font-face {
-    font-family: 'CMU Serif BoldItalic';
-    font-style: normal;
-    font-weight: normal;
-    src: local('CMU Serif BoldItalic'), url('cmunbi.woff') format('woff');
-    }
+@font-face
+{
+  font-family: 'CMU Serif BoldItalic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('CMU Serif BoldItalic'), url('resources/computer-modern/cmunbi.woff') format('woff');
+}
 
 body 
 {
-  font-family: "CMU Serif Roman", "Lato", sans-serif;
+  font-family: "CMU Serif Roman";
 }
 
 .sidenav
 {
-  width     : 200px;
+  width     : 180px;
   position  : fixed;
   z-index   : 1;
-  top       : 20px;
+  top       : 50px;
   left      : 10px;
   background: #eee;
   overflow-x: hidden;
@@ -61,7 +61,16 @@ body
 {
   padding        : 6px 8px 6px 16px;
   text-decoration: none;
-  font-size      : 25px;
+  font-size      : 20px;
+  color          : #2196F3;
+  display        : block;
+}
+
+.sidenav-h
+{
+  padding        : 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size      : 20px;
   color          : #2196F3;
   display        : block;
 }
@@ -71,9 +80,9 @@ body
 }
 
 .main {
-  margin-left: 200px; /* Same width as the sidebar + left position in px */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+  margin-left : 200px; /* Same width as the sidebar + left position in px */
+  font-size   : 25px; /* Increased text to enable scrolling */
+  padding     : 0px 10px;
 }
 
 @media screen and (max-height: 450px) {
@@ -85,14 +94,17 @@ body
 <body>
 
 <div class="sidenav">
+  <div class="sidenav-h">  <b> SECTIONS</b> </div>
   <a href="#bit">          Classical Bit </a>
-  <a href="#qubit">        Quatum Bit    </a>
+  <a href="#qubit">        Quantum Bit    </a>
+  <a href="#qstates">      Quantum States </a>
   <a href="#entanglement"> Entanglement  </a>
   <a href="#interference"> Interference  </a>
 </div>
 
 <div class="main">
 
+<!------------------------------------------------------------------------------------------------->
 <center>
 <h1> Quantum States for Quantum Computing </h1>
 $$
@@ -103,56 +115,122 @@ $$
 
 Prepared by <i>Ren Tristan A. de la Cruz</i>
 </center>
+
+<!------------------------------------------------------------------------------------------------->
+
 <hr>
-The Quick brown fox jumps over the lazy dog.
+<h3> Introduction </h3>
+This 
 <hr>
 
+
+<!------------------------------------------------------------------------------------------------->
 <br>
 <h2 id="bit"> 
 Classical Bit 
 </h2>
 <hr>
 
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
 
-
+<!------------------------------------------------------------------------------------------------->
 <br>
 <h2 id="qubit"> 
 Quantum Bit 
 </h2>
 <hr>
 
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
+<h3> Superposition  </h3>
+
+<h3> Qubit Examples </h3>
+
+<h3> Qubits as Vectors </h3>
+
+<h3> Qubits as Binary Trees </h3>
+
+<!------------------------------------------------------------------------------------------------->
+<br>
+<h2 id="qstates"> 
+Quantum States
+</h2>
+<hr>
 
 
+Let the first qubit be \(\ket{q_1}\):
+
+$$
+\ket{q_1} = \alpha \ket{0} + \beta \ket{1} 
+          = \begin{bmatrix}
+              \alpha \\
+              \beta
+            \end{bmatrix}
+$$
+
+Let the second qubit be \(\ket{q_2}\):
+
+$$
+\ket{q_2} = \gamma \ket{0} + \delta \ket{1}
+          = \begin{bmatrix}
+              \gamma \\
+              \delta
+            \end{bmatrix}
+$$
+
+The tensor product of \(\ket{q_1}\) and \(\ket{q_2}\), denoted by \(\ket{q_1} \otimes \ket{q_2}\) 
+(or simply \(\ket{q_1q_2}\) ), is computed as follows:
+$$
+\begin{align*}
+\ket{q_1} \otimes \ket{q_2} &= \ket{q_1q_2}  \\
+                            &= (\alpha \ket{0} + \beta \ket{1})  \otimes 
+                               (\gamma \ket{0} + \delta\ket{1}) \\
+                            &= [(\alpha \ket{0}) \otimes (\gamma \ket{0} + \delta \ket{1})] +
+                               [(\beta  \ket{1}) \otimes (\gamma \ket{0} + \delta \ket{1})] \\
+                            &= [\alpha \gamma \ket{00} + \alpha \delta \ket{01}] + 
+                               [\beta  \gamma \ket{10} + \beta  \delta \ket{11}] \\ 
+                            &= \alpha \gamma \ket{00} + \alpha \delta \ket{01} + 
+                               \beta  \gamma \ket{10} + \beta  \delta \ket{11} \\ 
+\end{align*}
+$$
+
+As column vectors:
+
+$$
+\begin{align*}
+\ket{q_1q_2} &= \ket{q_1} \otimes \ket{q_2} \\
+             &= \begin{bmatrix}
+                \alpha \\
+                \beta  
+                \end{bmatrix}
+                \otimes
+                \begin{bmatrix}
+                \gamma \\
+                \delta 
+                \end{bmatrix} \\
+             &= \begin{bmatrix}
+                \alpha \begin{bmatrix}
+                       \gamma \\
+                       \delta
+                       \end{bmatrix} \\
+                \beta  \begin{bmatrix}
+                       \gamma \\
+                       \delta
+                       \end{bmatrix}
+                \end{bmatrix}
+              = \begin{bmatrix}
+                \alpha \cdot \gamma \\
+                \alpha \cdot \delta \\
+                \beta  \cdot \gamma \\
+                \beta \cdot \delta
+                \end{bmatrix} \\
+             &= \begin{bmatrix}
+                \alpha \gamma \\
+                \alpha \delta \\
+                \beta  \gamma \\
+                \beta  \delta
+                \end{bmatrix}
+\end{align*}
+$$
+
+<!------------------------------------------------------------------------------------------------->
 <br>
 <h2 id="entanglement">
 Entanglement of Qubits
@@ -168,23 +246,9 @@ $$
               \end{bmatrix} \right\rbrace    
 \end{align*}
 $$
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
-<p> The quick brown fox jumps over the lazy dog. </p>
 
 
+<!------------------------------------------------------------------------------------------------->
 </div>  
 
 </body>
