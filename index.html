@@ -139,12 +139,89 @@ Quantum Bit
 </h2>
 <hr>
 
+Basis \(\{\ket{0}, \ket{1}\}\)
+
+<!------------------------------------------------------------------------------------------------->
+
 <h3> Superposition  </h3>
 
+$$
+\ket{\psi} = \alpha \ket{0} + \beta \ket{1}
+$$
+
+<b>Born Rule:</b>
+
+$$
+|\alpha|^2 + |\beta|^2 = 1
+$$
+
+
+<!------------------------------------------------------------------------------------------------->
 <h3> Qubit Examples </h3>
 
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+</style>
+
+<center>
+<table style="width:70%">
+  <tr>
+    <th rowspan="2"> Qubit State </th>
+    <th colspan="2">Amplitude of Basis:</th>
+    <th colspan="2">Probability of Basis:</th>
+  </tr>
+  <tr>
+    <td> \( \ket{0}\) </td>
+    <td> \( \ket{1}\) </td>
+    <td> \( \ket{0}\) </td>
+    <td> \( \ket{1}\) </td>
+  </tr>
+  <tr>
+    <td> \( \ket{\psi_1}  = 1 \ket{0} + 0 \ket{1} = \ket{0} \) </td>
+    <td> 1 </td>
+    <td> 0 </td>
+    <td> \( \left| 1 \right|^2 = 1\) </td>
+    <td> \( \left| 0 \right|^2 = 0\) </td>
+  </tr>
+  <tr>
+    <td> \( \ket{\psi_2}  = 0 \ket{0} + 1 \ket{1} = \ket{1} \) </td>
+    <td> 0 </td>
+    <td> 1 </td>
+    <td> \( \left| 0 \right|^2 = 0\) </td>
+    <td> \( \left| 1 \right|^2 = 1\) </td>
+  </tr>
+  <tr>
+    <td> \( \ket{\psi_3}  = \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}}  \ket{1} \) </td>
+    <td> \( \frac{1}{\sqrt{2}} \) </td>
+    <td> \( \frac{1}{\sqrt{2}} \) </td>
+    <td> \( \left|\frac{1}{\sqrt{2}}\right|^2 =  \frac{1}{2} \) </td>
+    <td> \( \left|\frac{1}{\sqrt{2}}\right|^2 =  \frac{1}{2} \) </td>
+  </tr>
+  <tr>
+    <td> \( \ket{\psi_4}  = \frac{1}{\sqrt{4}} \ket{0} + \frac{\sqrt{3}}{\sqrt{4}}  \ket{1} \) </td>
+    <td> \( \frac{1}{\sqrt{4}} \) </td>
+    <td> \( \frac{\sqrt{3}}{\sqrt{4}} \) </td>
+    <td> \( \left|\frac{1}{\sqrt{4}}\right|^2 =  \frac{1}{4} \) </td>
+    <td> \( \left|\frac{\sqrt{3}}{\sqrt{4}}\right|^2 =  \frac{3}{4} \) </td>
+  </tr>
+  <tr>
+    <td> \( \ket{\psi_5}  = \frac{\sqrt{5}}{\sqrt{8}} \ket{0} + \frac{\sqrt{3}}{\sqrt{8}}  \ket{1} \) </td>
+    <td> \( \frac{\sqrt{5}}{\sqrt{8}} \) </td>
+    <td> \( \frac{\sqrt{3}}{\sqrt{8}} \) </td>
+    <td> \( \left|\frac{\sqrt{5}}{\sqrt{8}}\right|^2 =  \frac{5}{8} \) </td>
+    <td> \( \left|\frac{\sqrt{3}}{\sqrt{8}}\right|^2 =  \frac{3}{8} \) </td>
+  </tr>
+</table>
+</center>
+
+<!------------------------------------------------------------------------------------------------->
 <h3> Qubits as Vectors </h3>
 
+<!------------------------------------------------------------------------------------------------->
 <h3> Qubits as Binary Trees </h3>
 
 Horizontal tree
@@ -178,7 +255,7 @@ Horizontal Tree
   <img   src="figures/qs-2qubit-htree.svg" 
          alt="2-qubit State as a Horizontal Binary Tree"
        align="center"
-       width="500 "/>
+       width="400 "/>
 </div>
 
 Vertical Binary Tree
@@ -187,7 +264,7 @@ Vertical Binary Tree
   <img   src="figures/qs-2qubit-vtree.svg" 
          alt="2-qubit State as a Vertical Binary Tree"
        align="center"
-       width="550 "/>
+       width="450 "/>
 </div>
 
 
