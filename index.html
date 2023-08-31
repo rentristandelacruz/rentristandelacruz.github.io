@@ -80,6 +80,11 @@ body
   color: #064579;
 }
 
+a
+{
+  text-decoration: none;
+}
+
 .main {
   margin-left : 200px; /* Same width as the sidebar + left position in px */
   font-size   : 25px; /* Increased text to enable scrolling */
@@ -122,7 +127,8 @@ Updated on:  <i> 2023 August 31 </i>
 
 <hr>
 <h3> Introduction </h3>
-This 
+This 'notebook' 
+\(\langle Womanium | Quantum \rangle\) 
 <hr>
 
 
@@ -151,7 +157,7 @@ also used as values for the classical bit.
 
 <p>
 One <i>bit</i> of information can be stored in any system that has two distinguishable states. We 
-call such systems as classical <i>two-state</i> systems. e.g. A physical on/off switch is a 
+call such systems as <i>classical two-state</i> systems. e.g. A physical on/off switch is a 
 two-state system where the two states are <i>on</i> and <i>off</i>. A punched card, or specifically 
 a position/location on a punched card, is a two-state system where the two states are 
 <i>punched</i> (has hole) and <i>non-punched</i> (no hole). The punched card as a whole contains 
@@ -162,17 +168,17 @@ many of these two-state 'systems' and thus stores multiple bits of information.
 <h3> Bit Strings </h3>
 
 <p>
-To represent multiple bits of information, bits can be stringed together to form a <i>bit string</i>.
-Bit strings are needed to represent states of a system with more than two states. For example, for a
-system that can be in one of four possible states \( A, B, C, D \),  2-bit strings are needed in order
-to represent the four states. i.e Bit string \(00\) can represent state \(A\),  \(01\) can
-represent state \(B\), \(10\) can represent state \(C\), and \(11\) can represent state \(D\). In
-general, if a system has \(X\) possible states, then you need around \(log_2(X)\) bits to 
-represent the states of the system. More precisely:
+To represent multiple bits of information, bits can be stringed together to form a <i>bit string</i>
+(also called <i>binary strings</i>). Bit strings are needed to represent states of a system with
+more than two states. For example, for a system that can be in one of four possible states \( A, B,
+C, D \),  2-bit strings are needed in order to represent the four states. i.e Bit string \(00\) can 
+represent state \(A\),  \(01\) can represent state \(B\), \(10\) can represent state \(C\), and 
+\(11\) can represent state \(D\). In general, if a system has \(X\) possible states, then you need
+around \(log_2(X)\) bits to represent the states of the system. More precisely:
 </p>
 
 $$
-\text{number of bits } = \lceil log_2(\text{number of possible options}) \rceil
+\text{number of bits } = \lceil log_2(\text{number of possible options or states}) \rceil
 $$
 
 <p>
@@ -181,21 +187,46 @@ For example, after rolling a six-sided, it will be in one of the following six s
 to represent the six possible states of the die. i.e. String \(000\) represents state \(1\), \(001\) 
 represents state \(2\), \(010\) represents state \(3\), \(011\) represents state \(4\), \(100\)
 represents state \(5\), \(101\) represents state \(6\), while strings \(110\) and \(111\) do not
-represent any possible die states.  
+represent any possible die states. \(3\)-bit strings can represent 8 states while \(2\)-bit strings
+can only represent 4 states and so we need 3 bits to represent that states of the die.  
 </p>
 
 <p>
-\(\Sigma = \{0, 1\}\)
+<b>Some Formalism:</b> The set \(\Sigma = \{0, 1\}\) is the <i>alphabet</i> of the bit strings. The
+concatenation operation \(|\) can take two bits \(b_1, b_2 \in \Sigma\) and form the 2-bit string
+\(b_1|b_2\) or simply \(b_1b_2\). e.g If \(b_1=0\) and \(b_2=1\), then \(b_1|b_2 = b_1b_2 = 01\).
+If \(b_1=1\) and \(b_2=1\), the \(b_1|b_2 = b_1b_2 = 11\). The concatenation operation can also 
+string together bit strings (not only bits). e.g. If \(B_1 = 101\)  and \(B_2 = 111\)$, then 
+\(B_1 | B_2 = B_1B_2 = 101111\). The <i>length</i> of a bit string is the number of bits is has. The 
+symbol \(\lambda\), or sometimes \(\varepsilon\), denotes the <i>empty string</i>, the string with 
+no symbols (bits). The set \(\Sigma^* = \{\lambda, 0,1,00,01,10,11,...\}\), pronounced as 
+`sigma star`, is the set of all bit string of any length which includes the empty string. The 
+set \(\Sigma^+ =\{0,1,00,01,10,11,...\}\), pronounced as `sigma plus`, is the set of all strings of
+any length excluding the empty string. The set \(\Sigma^n\) is the set of all bit strings of length
+\(n\). i.e. \(\Sigma^2 = \{00,01,10,11\} \).
 </p>
 
 <!------------------------------------------------------------------------------------------------->
 <br>
 <h2 id="qubit"> 
-Quantum Bit 
+Quantum Bit (Qubit)
 </h2>
 <hr>
 
-Basis \(\{\ket{0}, \ket{1}\}\)
+<p>
+If the classical bit is the information stored in a classical two-state system, then the 
+<i> quantum bit (or qubit) </i> is the information stored in a <i>quantum two-state</i> system. In
+a quantum two-state system, there is also a set with two states called the <i>basis</i>. Let the set
+\(\{\ket{A}, \ket{B}\}\) be basis of the quantum two-state system. This means that if we observe the
+quantum system to determine its state, we will either observe the system in state \(\ket{A}\) or 
+observe the system in state \(\ket{B}\). The state \(\ket{A}\) is pronounced as `ket A` while state
+\(\ket{B}\) is pronounced as `ket B`. This way of writing states is part of the 
+<b><a href="https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation">bra-ket notation</a>
+</b> created by the physicist <a href="https://en.wikipedia.org/wiki/Paul_Dirac">Paul Dirac</a>. 
+When you see these <i>ket</i> notations, you know you will be dealing with quantum states and not
+classical states.
+</p>
+
 
 <!------------------------------------------------------------------------------------------------->
 
