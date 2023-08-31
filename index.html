@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title> Quantum States for Quantum Computing </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -113,7 +114,8 @@ $$
 \text{ 2023 Project}
 $$
 
-Prepared by <i>Ren Tristan A. de la Cruz</i>
+Prepared by: <i> Ren Tristan A. de la Cruz</i> <br>
+Updated on:  <i> 2023 August 31 </i>
 </center>
 
 <!------------------------------------------------------------------------------------------------->
@@ -141,15 +143,49 @@ occurred or was selected.
 
 <p>
 The term <i> bit </i> is the contraction of "binary digit". Digits \( \texttt{0} \) and 
-\( \texttt{1} \) are often used as the values of the classical bit. 
+\( \texttt{1} \) are often used as the values of the classical bit. Digit \( \texttt{0} \) 
+represents one of the two possible options while the digit \( \texttt{1} \) represents the other 
+option. Alternative pairs of values like <i>false-true</i>, <i>off-on</i>, and <i>low-high</i> are
+also used as values for the classical bit.
+</p>
+
+<p>
+One <i>bit</i> of information can be stored in any system that has two distinguishable states. We 
+call such systems as classical <i>two-state</i> systems. e.g. A physical on/off switch is a 
+two-state system where the two states are <i>on</i> and <i>off</i>. A punched card, or specifically 
+a position/location on a punched card, is a two-state system where the two states are 
+<i>punched</i> (has hole) and <i>non-punched</i> (no hole). The punched card as a whole contains 
+many of these two-state 'systems' and thus stores multiple bits of information.
 </p>
 
 <!------------------------------------------------------------------------------------------------->
-
 <h3> Bit Strings </h3>
 
 <p>
-fsfs
+To represent multiple bits of information, bits can be stringed together to form a <i>bit string</i>.
+Bit strings are needed to represent states of a system with more than two states. For example, for a
+system that can be in one of four possible states \( A, B, C, D \),  2-bit strings are needed in order
+to represent the four states. i.e Bit string \(00\) can represent state \(A\),  \(01\) can
+represent state \(B\), \(10\) can represent state \(C\), and \(11\) can represent state \(D\). In
+general, if a system has \(X\) possible states, then you need around \(log_2(X)\) bits to 
+represent the states of the system. More precisely:
+</p>
+
+$$
+\text{number of bits } = \lceil log_2(\text{number of possible options}) \rceil
+$$
+
+<p>
+For example, after rolling a six-sided, it will be in one of the following six states: 
+\(1,2,3,4,5,6\). Since \( log_2(6) \approx 2.58496 \), you need \(3 = \lceil log_2(6) \rceil \) bits
+to represent the six possible states of the die. i.e. String \(000\) represents state \(1\), \(001\) 
+represents state \(2\), \(010\) represents state \(3\), \(011\) represents state \(4\), \(100\)
+represents state \(5\), \(101\) represents state \(6\), while strings \(110\) and \(111\) do not
+represent any possible die states.  
+</p>
+
+<p>
+\(\Sigma = \{0, 1\}\)
 </p>
 
 <!------------------------------------------------------------------------------------------------->
