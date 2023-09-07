@@ -114,7 +114,7 @@ a
 <center>
 <h1> Quantum States for Quantum Computing </h1>
 Prepared by: <i> Ren Tristan A. de la Cruz</i> <br>
-Updated on:  <i> 2023 September 06 </i>
+Updated on:  <i> 2023 September 07 </i>
 </center>
 
 <!------------------------------------------------------------------------------------------------->
@@ -271,6 +271,13 @@ $$
 |\alpha|^2 + |\beta|^2 = 1
 $$
 
+<div align="center">
+  <img   src="figures/qs-amplitudes.svg" 
+         alt="Qubit as Horizontal Binary Tree"
+       align="center"
+       width="550"/>
+</div>
+
 
 <!------------------------------------------------------------------------------------------------->
 <h3> Qubit Examples </h3>
@@ -337,6 +344,54 @@ table, th, td {
 
 <!------------------------------------------------------------------------------------------------->
 <h3> Qubits as Vectors </h3>
+
+The qubit \( \ket{0} \) can be represented by the column vector:
+
+$$
+\ket{0} 
+= 
+\begin{bmatrix}
+  1 \\
+  0
+\end{bmatrix}
+$$
+
+
+The qubit \( \ket{1} \) can be represented by the column vector:
+
+$$
+\ket{1}
+=
+\begin{bmatrix}
+  0 \\
+  1
+\end{bmatrix}
+$$
+
+
+The generic qubit \( \ket{\psi} =  \alpha\ket{0} + \beta\ket{1} \) can be represented by column
+vector:
+
+$$
+\ket{\psi}
+=
+\begin{bmatrix}
+  \alpha \\
+  \beta
+\end{bmatrix}
+=
+\alpha
+\begin{bmatrix}
+  1 \\
+  0
+\end{bmatrix}
++
+\beta
+\begin{bmatrix}
+  0 \\
+  1
+\end{bmatrix}
+$$
 
 <!------------------------------------------------------------------------------------------------->
 <h3> Qubits as Binary Trees </h3>
