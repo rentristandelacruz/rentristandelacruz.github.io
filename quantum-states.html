@@ -49,7 +49,7 @@ body
 
 .sidenav
 {
-  width     : 180px;
+  width     : 150px;
   position  : fixed;
   z-index   : 1;
   top       : 50px;
@@ -77,7 +77,8 @@ body
   display        : block;
 }
 
-.sidenav a:hover {
+.sidenav a:hover 
+{
   color: #064579;
 }
 
@@ -106,6 +107,8 @@ a
   <a href="#qubit">        Quantum Bit    </a>
   <a href="#qstates">      Quantum States </a>
   <a href="#entanglement"> Entanglement  </a>
+  <div class="sidenav-h">  <b> APPENDIX</b> </div>
+  <a href="#complex"> Complex Numbers  </a>
 </div>
 
 <div class="main">
@@ -246,8 +249,8 @@ Quantum Bit (Qubit) <span style="color:red">[Work in Progress]</span>
 <p>
 If the classical bit is the information stored in a classical two-state system, then the 
 <i> quantum bit (or qubit) </i> is the information stored in a <i>quantum two-state</i> system. In
-a quantum two-state system, there is also a set with two states called the <i>basis</i>. Let the set
-\(\{\ket{A}, \ket{B}\}\) be basis of the quantum two-state system. This means that if we observe the
+a two-state quantum system, there is also a set with two states called the <i>basis</i>. Let the set
+\(\{\ket{A}, \ket{B}\}\) be basis of the two-state quantum system. This means that if we observe the
 quantum system to determine its state, we will either observe the system in state \(\ket{A}\) or 
 observe the system in state \(\ket{B}\). The state \(\ket{A}\) is pronounced as `ket A` while state
 \(\ket{B}\) is pronounced as `ket B`. This way of writing states is part of the 
@@ -261,6 +264,12 @@ physicist <a href="https://en.wikipedia.org/wiki/Paul_Dirac">Paul Dirac</a>. Whe
 
 <h3> Superposition  </h3>
 
+Similar to a classical two-state system, you can observe a quantum two-state system, given it has
+the basis \( \{\ket{A}, \ket{B}\} \), as being in either one of two states, \( \ket{A} \) or 
+\( \ket{B} \). 
+
+The classical bit specifies the definite state of a two-state classical system.  
+
 $$
 \ket{\psi} = \alpha \ket{0} + \beta \ket{1}
 $$
@@ -271,6 +280,8 @@ $$
 |\alpha|^2 + |\beta|^2 = 1
 $$
 
+fdsfsdf
+
 <div align="center">
   <img   src="figures/qs-amplitudes.svg" 
          alt="Representation of the Born Rule"
@@ -278,9 +289,20 @@ $$
        width="550"/>
 </div>
 
+fdsfsd
+
 <div align="center">
   <img   src="figures/qs-circle.svg" 
          alt="Using a Single Angle to Define Amplitudes"
+       align="center"
+       width="550"/>
+</div>
+
+fdsfsd
+
+<div align="center">
+  <img   src="figures/qs-blochsphere.svg" 
+         alt="Bloch Sphere"
        align="center"
        width="550"/>
 </div>
@@ -351,6 +373,10 @@ table, th, td {
 
 <!------------------------------------------------------------------------------------------------->
 <h3> Qubits as Vectors </h3>
+
+$$
+\ket{\psi} = cos(\frac{\theta}{2})\ket{0} + e^{i\phi} sin(\frac{\theta}{2}) i \ket{1}
+$$
 
 The qubit \( \ket{0} \) can be represented by the column vector:
 
@@ -571,6 +597,87 @@ Entanglement \(q_1 = q_2 = q_3\):
        width="700"/>
 </div>
 <br>
+
+
+
+
+<!------------------------------------------------------------------------------------------------->
+<h1>
+Appendix
+</h1>
+<hr>
+
+<!------------------------------------------------------------------------------------------------->
+<h2 id="complex">
+Complex Numbers
+</h2>
+
+<p>
+The set \(\mathbb{C}\) of <i>complex numbers</i> is an extension of the set \(\mathbb{R}\) of 
+<i>real</i> numbers. A complex number \(z\) has the form:
+
+$$
+z = a + bi
+$$
+
+where \(a,b \in \mathbb{R}\) are real numbers and \(i = \sqrt{-1}\) is the <i>imaginary unit</i>. We
+denote the real component of the complex number \(z\) as \(Re(z)\) while the imaginary component is 
+denoted as \(Im(z)\). i.e. Given \(z=a+bi\), \(Re(z) = a\) and \(Im(z)=b\).
+</p>
+
+<p>
+A complex number can be represented as a point in a two-dimensional plane called the 
+<i>Argand plane</i>. Conventionally, the horizontal axis of the plane represents the real component
+of the complex number while the vertical component represents the imaginary component of the 
+complex number. The complex number \(z = a+bi \) is represented as the point \((a,b)\) on  the 
+plane.
+
+<div align="center">
+  <img   src="figures/comp-argand.svg" 
+         alt="Argand Plane"
+       align="center"
+       width="450"/>
+</div>
+</p>
+
+<p>
+The <i>modulus</i> (or <i>absolute value</i>) of the complex number \(z = a + bi\) is the real 
+number is:
+
+$$
+|z| = \sqrt{Re(z)^2 + Im(z)^2} = \sqrt{a^2+b^2}
+$$
+The modulus is the distance from the origin \((0,0)\) to the point \((a,b)\) that represents \(z\).
+</p>
+
+<p>
+The <i>complex conjugate</i> of the complex number \(z = a + bi\) is the complex number:
+$$
+z^* = a - bi
+$$
+</p>
+
+<p>
+The <i>square modulus</i> of the complex number \(z=a+bi\), denoted as \(|z|^2\), is simply the 
+square of its modulus.
+
+$$
+|z|^2 = Re(z)^2 + Im(z)^2 = a^2+b^2
+$$
+
+Another way of computing the square modulus is by multiplying \(z\) with its complex conjugate 
+\(z^*\).
+
+$$
+\begin{align*}
+|z|^2 = zz^* &= (a+bi)(a-bi) \\
+             &= a^2 + abi - abi - (bi)^2 \\
+             &= a^2 -(i)^2b^2 \\
+             &= a^2 -(-1)b^2 \\
+             &= a^2 + b^2
+\end{align*}
+$$
+</p>
 
 <!------------------------------------------------------------------------------------------------->
 </div>  
