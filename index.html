@@ -317,10 +317,50 @@ preparation procedure) the quantum systems' states are <i>indeterminate</i> (mea
 <h3> Superposition </h3>
 
 <p>
-One can ask if a two-state quantum system can be in an indeterminate state, how does a qubit encode
-such state? A more general question would be: if a qubit encodes the information stored in a 
-two-level quantum system what exactly are the information about the system that are encoded in the 
-qubit?
+Knowing that a quantum system's state can be indeterminate, we can ask the following questions:
+<ul>
+<li> How does a qubit encode an indeterminate state?</li>
+<li> What exactly are the information (about the two-state quantum system) that the qubit encodes?</li>
+</ul>
+</p>
+
+<p>
+First, as a convention we will usually use the basis \(\{ \ket{0}, \ket{1} \}\) for two-state
+quantum systems. State \(\ket{0}\) represents one observable state of the system while \(\ket{1}\)
+represents the other observable state. The basis states \(\ket{0}\) and \(\ket{1}\) are usually the 
+ones used for two-state quantum systems because they are the analogues of the classical bits, 
+\(0\) and \(1\).
+</p>
+
+<p>
+Let \(\ket{\psi}\) be the qubit for a two-state quantum system. For the case where the quantum state
+is definite since the system was measured/observed, either \(\ket{\psi} = \ket{0}\) or 
+\(\ket{\psi}=\ket{1}\). The challenge now is encoding the information in the qubit when the system is
+in an indeterminate state.
+</p>
+
+<p>
+Let's rename the basis states from the experiment above. Let \(\ket{0} = \ket{A}\)  and 
+\(\ket{1} =\ket{B}\). In the experiment above, we have a set of identically prepared two-state 
+quantum systems and after observations some of the systems are observed to be in state \(\ket{0}\) 
+while other systems are observed to be in state \(\ket{1}\). To be more precise, in the experiment
+there are 8 identically prepared systems, 4 systems were observed to be in state \(\ket{0}\) and the
+other 4 systems are observed to be in state \(\ket{1}\). The information encoded in a qubit is the
+information related to the distribution of the observed states. 
+</p>
+
+<p>
+Let us specify the parameters of the experiment. Let \(n\) be the number of the two-state quantum 
+systems, \(\ket{\psi_0}\) be the chosen initial state of the systems (which is either \(\ket{0}\) or
+\(\ket{1}\)), and \(X\) be the label for the preparation procedure. Let \(n_0\) be the number of
+systems observed to be in state \(\ket{0}\) while \(n_1\) be the number of systems observed to be in
+state \(\ket{1}\). The output of the experiment is the pair of numbers \(p_0\) and \(p_1\) where
+\(p_0 = \frac{n_0}{n}\) is the fraction of the systems observed to be in state \(\ket{0}\) while 
+\(p_1 = \frac{n_1}{n}\) is the fraction of the systems observed to be in state \(\ket{1}\).
+</p>
+
+<p>
+If you repeat the expirement but every iteration to increase the 
 </p>
 
 <br> <br>
