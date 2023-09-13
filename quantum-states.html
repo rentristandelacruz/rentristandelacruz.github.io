@@ -117,7 +117,7 @@ a
 <center>
 <h1> Quantum States for Quantum Computing </h1>
 Prepared by: <i> Ren Tristan A. de la Cruz</i> <br>
-Updated on:  <i> 2023 September 07 </i>
+Updated on:  <i> 2023 September 13 </i>
 </center>
 
 <!------------------------------------------------------------------------------------------------->
@@ -262,16 +262,66 @@ states.
 
 <!------------------------------------------------------------------------------------------------->
 
-<h3> Superposition </h3>
+<h3> Quantum Indeterminacy </h3>
 
+<p>
 Similar to a two-state classical system, when a two-state quantum system is observed/measured it will
 either be in state \(\ket{A}\) or in state \(\ket{B}\), given the system basis is \(\{\ket{A}, 
 \ket{B}\}\). The quantum system has definite state when observed. But unlike a classical system, 
-prior to measurement the state of a two-level quantum system can actually be "indefinite". This 
-notion is known as <a href="https://en.wikipedia.org/wiki/Quantum_indeterminacy">
-<i>quantum indeterminacy</i></a>. 
+prior to any measurement/observation the state of a two-level quantum system can actually be 
+"indefinite". This notion is known as <a href="https://en.wikipedia.org/wiki/Quantum_indeterminacy">
+<b><i>quantum indeterminacy</i></b></a>. 
+</p>
 
+<p>
+Quantum indeterminacy is inferred by many experiments that have been conducted during the early 
+development of quantum mechanics. We sketch an abstract version of such experiments:
 
+<ol>
+<li> Have a set of identical two-state systems (i.e. All systems have the same initial state)</li>
+<li> Perform the same preparation procedure for each system. </li>
+<li> Measure (observe the state) each system. </li>
+</ol>
+
+If we are dealing with two-state classical systems, we expect the observed states of the systems to
+be identical since the initial states of the systems are identical and the preparation procedures 
+used for each system are identical. When two-state quantum systems are used in the experiment, there
+are preparation procedures that can be used in the experiment such that the observed states are not
+identical. In the quantum version of the experiment, the initial states of the quantum systems are 
+still identical and the same preparation procedure is used for all systems. We also note that the
+preparation procedure is formulated in such a way as to eliminate (as much as possible) external 
+factors that can affect the states of the systems. In the experiment, we want the initial state and
+the preparation procedure to be the only factors that affect the (prepared) state of the systems.
+</p>
+
+<p>
+The figure below shows an abstract example of such experiments. There are eight two-level quantum
+systems with basis \(\{\ket{A}, \ket{B}\}\). All eight systems are measured to be in state 
+\(\ket{A}\) initially. The same preparation procedure is conducted on all eight systems. Let the 
+label of the first system be \(\ket{\psi_1}\), the label of the second system be \(\ket{\psi_2}\), 
+and in general the label of the \(i\)-th system is \(\ket{\psi_{i}}\). After observing the quantum
+systems, some of systems are observed to be in state \(\ket{A}\) while other are observed to be in
+state \(\ket{B}\). The implication of this experiment is that prior to observation (after the 
+preparation procedure) the quantum systems' states are <i>indeterminate</i> (meaning 
+"having no definite value").
+<br>
+<div align="center">
+  <img   src="figures/quantum-indeterminacy.svg" 
+         alt="Quantum Indeterminacy"
+       align="center"
+       width="700"/>
+</div>
+</p>
+
+<!------------------------------------------------------------------------------------------------->
+<h3> Superposition </h3>
+
+<p>
+One can ask if a two-state quantum system can be in an indeterminate state, how does a qubit encode
+such state? A more general question would be: if a qubit encodes the information stored in a 
+two-level quantum system what exactly are the information about the system that are encoded in the 
+qubit?
+</p>
 
 <br> <br>
 
