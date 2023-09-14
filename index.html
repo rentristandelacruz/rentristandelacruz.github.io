@@ -117,7 +117,7 @@ a
 <center>
 <h1> Quantum States for Quantum Computing </h1>
 Prepared by: <i> Ren Tristan A. de la Cruz</i> <br>
-Updated on:  <i> 2023 September 13 </i>
+Updated on:  <i> 2023 September 14 </i>
 </center>
 
 <!------------------------------------------------------------------------------------------------->
@@ -229,7 +229,7 @@ can only represent 4 states and so we need 3 bits to represent that states of th
 concatenation operation \(|\) can take two bits \(b_1, b_2 \in \Sigma\) and form the 2-bit string
 \(b_1|b_2\) or simply \(b_1b_2\). e.g If \(b_1=0\) and \(b_2=1\), then \(b_1|b_2 = b_1b_2 = 01\).
 If \(b_1=1\) and \(b_2=1\), the \(b_1|b_2 = b_1b_2 = 11\). The concatenation operation can also 
-string together bit strings (not only bits). e.g. If \(B_1 = 101\)  and \(B_2 = 111\)$, then 
+string together bit strings (not only bits). e.g. If \(B_1 = 101\)  and \(B_2 = 111\), then 
 \(B_1 | B_2 = B_1B_2 = 101111\). The <i>length</i> of a bit string is the number of bits is has. The 
 symbol \(\lambda\), or sometimes \(\varepsilon\), denotes the <i>empty string</i>, the string with 
 no symbols (bits). The set \(\Sigma^* = \{\lambda, 0,1,00,01,10,11,...\}\), pronounced as 
@@ -288,8 +288,8 @@ be identical since the initial states of the systems are identical and the prepa
 used for each system are identical. When two-state quantum systems are used in the experiment, there
 are preparation procedures that can be used in the experiment such that the observed states are not
 identical. In the quantum version of the experiment, the initial states of the quantum systems are 
-still identical and the same preparation procedure is used for all systems. We also note that the
-preparation procedure is formulated in such a way as to eliminate (as much as possible) external 
+still identical and the same preparation procedure is performed for all systems. We also note that 
+the preparation procedure is formulated in such a way as to eliminate (as much as possible) external 
 factors that can affect the states of the systems. In the experiment, we want the initial state and
 the preparation procedure to be the only factors that affect the (prepared) state of the systems.
 </p>
@@ -297,13 +297,14 @@ the preparation procedure to be the only factors that affect the (prepared) stat
 <p>
 The figure below shows an abstract example of such experiments. There are eight two-level quantum
 systems with basis \(\{\ket{A}, \ket{B}\}\). All eight systems are measured to be in state 
-\(\ket{A}\) initially. The same preparation procedure is conducted on all eight systems. Let the 
-label of the first system be \(\ket{\psi_1}\), the label of the second system be \(\ket{\psi_2}\), 
-and in general the label of the \(i\)-th system is \(\ket{\psi_{i}}\). After observing the quantum
-systems, some of systems are observed to be in state \(\ket{A}\) while other are observed to be in
-state \(\ket{B}\). The implication of this experiment is that prior to observation (after the 
-preparation procedure) the quantum systems' states are <i>indeterminate</i> (meaning 
-"having no definite value").
+\(\ket{A}\) initially. The same preparation procedure is performed on all eight systems. Let the 
+label of the first system's state be \(\ket{\psi_1}\), the label of the second system's state be 
+\(\ket{\psi_2}\), and in general the label of the \(i\)-th system's state is \(\ket{\psi_{i}}\). 
+After observing the quantum systems, some of systems are observed to be in state \(\ket{A}\) while 
+other are observed to be in state \(\ket{B}\). The implication of this experiment is that prior to 
+observation (after the preparation procedure) the quantum systems' states are <i>indeterminate</i> 
+(meaning "having no definite value"). It is only after measurement is performed will you get a 
+definite observed state.
 <br>
 <div align="center">
   <img   src="figures/quantum-indeterminacy.svg" 
@@ -326,10 +327,10 @@ Knowing that a quantum system's state can be indeterminate, we can ask the follo
 
 <p>
 First, as a convention we will usually use the basis \(\{ \ket{0}, \ket{1} \}\) for two-state
-quantum systems. State \(\ket{0}\) represents one observable state of the system while \(\ket{1}\)
-represents the other observable state. The basis states \(\ket{0}\) and \(\ket{1}\) are usually the 
-ones used for two-state quantum systems because they are the analogues of the classical bits, 
-\(0\) and \(1\).
+quantum systems. State \(\ket{0}\) represents one possible observable state of the system while 
+\(\ket{1}\) represents the other possible observable state. The basis states \(\ket{0}\) and 
+\(\ket{1}\) are usually the ones used for two-state quantum systems because they are the analogues 
+of the classical bits \(0\) and \(1\).
 </p>
 
 <p>
@@ -360,7 +361,36 @@ state \(\ket{1}\). The output of the experiment is the pair of numbers \(p_0\) a
 </p>
 
 <p>
-If you repeat the expirement but every iteration to increase the 
+You can repeat the experiment and for every iteration of the experiment you record the output 
+\(p_0\) and \(p_1\) then you can get the average of values of \(p_0\) and \(p_1\) for all iterations.
+You might notice that the average values of \(p_0\) and \(p_1\) are approaching some specific values
+the more interations you perform. You can also perform 'bigger' experiments by making the number of
+systems \(n\) larger. You might also notice that when you increase \(n\) the output \(p_0\) and 
+\(p_1\) are approaching some specific values. Let \(\overline{p_0}\) be the value \(p_0\) approaches
+as \(n\) gets larger and let \(\overline{p_1}\) be the value \(p_1\) approaches as \(n\) gets larger.
+For a given initial state \(\ket{\psi_0}\) and preparation procedure \(X\), there is associated 
+value for \(\overline{p_0}\) which is the probability of observing the system in state \(\ket{0}\).
+Note that the probability of observing the system in state \(\ket{1}\) is \(\overline{p_1} = (1 -
+\overline{p_0})\) so knowing the value of \(\overline{p_0}\) it is sufficient information to know
+the value of \(\overline{p_1}\).
+</p>
+
+<p>
+We can now partially answer the second question <i> "What exactly are the information that the qubit
+encodes?"</i>. One piece of information that a qubit encodes is the probability of observing state 
+\(\ket{0}\) (and by implication the probability of observing state \(\ket{1}\)). When the quantum 
+system is observed and is in the definite state \(\ket{\psi}\) (which is either \(\ket{0}\) or
+\(\ket{1}\)), then the qubit encodes the information "\( \ket{\psi} \) with probability 1".
+e.g. If state \(\ket{0}\) is observed, then the qubit encodes the information "\(\ket{0}\) with 
+probability 1" and if state \(\ket{1}\) is observed, then the qubit encodes the information
+"\(\ket{1}\) with probability 1". If the system is not observed and is in one of those states that
+is indeterminate, then a qubit may encode the information "\(\ket{0}\) with probability 
+\(\overline{p_0}\) and \(\ket{1}\) with probability \(\overline{p_1}\)". e.g.A qubit may encode the
+information "\(\ket{0}\) with probability \(\frac{1}{3}\) and \(\ket{1}\) with probability 
+\(\frac{2}{3}\)".
+</p>
+
+<p>
 </p>
 
 <br> <br>
