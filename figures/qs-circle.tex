@@ -8,14 +8,16 @@
 %\draw [dotted] (-2.70,-2.70) grid (2.70, 2.70);
 
 % axes labels
-\node []   (nodeA) at ( 2.65,  0.00) {$\alpha$} ;
-\node []   (nodeB) at ( 0.00,  2.65) {$\beta$} ;
+\node []   (nodeA) at ( 2.65,  0.00) {$+\alpha$} ;
+\node []   (nodea) at (-2.65,  0.00) {$-\alpha$} ;
+\node []   (nodeB) at ( 0.00,  2.65) {$+\beta$} ;
+\node []   (nodeb) at ( 0.00, -2.65) {$-\beta$} ;
 
 %axes
-\draw [->] ( 0.00,  0.00) -- ( 0.00,  2.50);
-\draw [->] ( 0.00,  0.00) -- ( 2.50,  0.00);
-\draw [->] ( 0.00,  0.00) -- (-2.50,  0.00);
-\draw [->] ( 0.00,  0.00) -- ( 0.00, -2.50);
+\draw [->] ( 0.00,  0.00) -- (nodeA);
+\draw [->] ( 0.00,  0.00) -- (nodea);
+\draw [->] ( 0.00,  0.00) -- (nodeB);
+\draw [->] ( 0.00,  0.00) -- (nodeb);
 
 % circle
 \draw (0,0) circle [radius=2.00];
