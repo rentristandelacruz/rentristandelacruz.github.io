@@ -93,7 +93,7 @@ a
 <center>
 <h1> Quantum States for Quantum Computing </h1>
 Prepared by: <i> Ren Tristan A. de la Cruz</i> <br>
-Updated on:  <i> 2023 September 21 </i>
+Updated on:  <i> 2023 September 22 </i>
 </center>
 
 <!------------------------------------------------------------------------------------------------->
@@ -509,21 +509,26 @@ a circle and not just part of the circle on the \((+\alpha, +\beta)\) quadrant.
 
 <p>
 Any point \((\alpha,\beta)\) on the plane can alternately be specified by its polar coordinate
-\((\theta,r)\) where \(\theta\) is the direction (the angle from the \(+\alpha\) axis) and 
+\((r,\theta)\) where \(\theta\) is the direction (the angle from the \(+\alpha\) axis) and 
 \(r\) is the radial distance from the origin \((0,0)\). Since the points \((\alpha,\beta)\) follow
 the Born rule and they all lie on the circle of radius 1 centered at \((0,0)\), their polar 
-coordinates follow the form \((\theta, r) = (\theta, 1)\). Any point on that circle can be specified
+coordinates follow the form \((r, \theta) = (1, \theta)\). Any point on that circle can be specified
 by one parameter which is the angle \(\theta\). Given an angle \(\theta\), you will have the 
-corresponding point \((\theta, 1)\) and its corresponding qubit is:
+corresponding point \((1,\theta)\) and its corresponding qubit is:
 
 $$
-\ket{\psi_\theta} = cos(\theta)\ket{0} + sin(\theta)\ket{1}
+\ket{\psi_\theta} = \alpha\ket{0} + \beta\ket{1} = cos(\theta)\ket{0} + sin(\theta)\ket{1}
 $$
 
 where \(\alpha = cos(\theta)\) and \(\beta = sin(\theta)\).
 </p>
 
 <!------------------------------------------------------------------------------------------------->
+
+<p>
+The table below shows some examples of qubits/states specified by some angle \(\theta\).
+</p>
+
 <center>
 <table style="width:75%">
   <tr>
@@ -589,6 +594,20 @@ where \(\alpha = cos(\theta)\) and \(\beta = sin(\theta)\).
   </tr>
 </table>
 </center>
+
+
+<p>
+Look at the qubit \(\ket{\psi_0} = \ket{0}\) when \(\theta=0\) and the state \(\ket{\psi_{\pi}}= 
+-\ket{0}\) when \(\theta=\pi\). For both qubits, you can observe observe their corresponding quantum
+systems as being in state \(\ket{0}\) since for both of them the probability \(|\alpha|^2\) of 
+observing the system in \(\ket{0}\) is 1 while the probability \(|\beta|^2\) of observing the system
+in \(\ket{1}\) is 0. Note that for both \(\ket{\psi_0}\) and \(\ket{\psi_\pi}\), they specify the
+same probabilities but they have different amplitudes (specifically, different \(\alpha\), 
+\(\alpha = 1\) for \(\ket{\psi_0}\) and \(\alpha=-1\) for \(\ket{\psi_\pi}\).
+</p>
+
+<!------------------------------------------------------------------------------------------------->
+<h3> Complex Amplitudes </h3>
 
 
 <div align="center">
@@ -909,6 +928,56 @@ $$
 \end{align*}
 $$
 </p>
+
+
+<p>
+The point \((a,b)\) on the Argand plane representing the complex number \(z=a+bi\) can be rewritten
+using a polar coordinate system. A point in a two-dimensional plane can be specified using a
+radial distance \(r\) from a fix point (the origin) and an angle \(\theta\) between a fix axis and
+the radius, line segment connecting the origin to the point. Given the point \((r,\theta\)) in
+polar coordinate, its coordinate in the Argand plane is \( (a,b) = (r\cdot cos(\theta), 
+r\cdot sin(\theta)) \).
+</p>
+
+<div align="center">
+  <img   src="figures/comp-polar.svg" 
+         alt="Polar Coordinates"
+       align="center"
+       width="550"/>
+</div>
+
+<p>
+The polar coordinate of a point representing a complex number is useful because it can be use to 
+write a complex number as a <i>complex exponential</i> using <i> Euler's formula</i>. Euler's 
+formula is:
+
+$$
+e^{ix} = cos(x) + sin(x) \cdot i
+$$
+</p>
+
+We can modify Euler's formula by letting \(x=\theta\) (the angle) and multiplying both sides of the
+equation by \(r\) (the radial distance). We will have the more general formula:
+
+$$
+re^{i\theta}  = r\cdot cos(\theta) + r \cdot sin(\theta) \cdot i 
+$$
+
+Any complex numbeer \(z = a+bi\) can be written as the complex exponential \(re^{i\theta}\) where
+\((r,\theta)\) is polar coordinate equivalent of the point \((a,b)\) on the Argand plane 
+representing the complex number \(z\). You can see this by starting with some point \((r,\theta)\),
+in polar coordinate, representing some complex number \(z\). The Argand plane coordinate of
+\((r,\theta)\) is \((a,b) = (r\cdot cos(\theta), r\cdot sin(\theta))\) and complex number
+represented by the point \((a,b)\) on the Argand plane is:
+
+$$
+\begin{align*}
+z &= a+bi\\
+  &= r \cdot cos(\theta) + r \cdot sin(\theta) \cdot i \\
+  &= re^{i\theta}
+\end{align*}
+$$
+
 
 <!------------------------------------------------------------------------------------------------->
 </div>  
