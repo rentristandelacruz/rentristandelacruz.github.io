@@ -1,0 +1,60 @@
+\documentclass[crop,tikz]{standalone}                 
+\usepackage{physics}
+\makeatletter                                                                                        
+
+\newcommand{\sq}[1]{\frac{1}{\sqrt{#1}}}
+
+\begin{document}
+
+  \begin{tikzpicture}[scale=5.3,cap=round,>=latex]
+    \draw[<->] (-1.1cm,0cm) -- (1.1cm,0cm) node[right,fill=white] {$\alpha$}; % x axis
+    \draw[<->] (0cm,-1.1cm) -- (0cm,1.1cm) node[above,fill=white] {$\beta$}; % y axis
+    
+    % draw the unit circle
+    \draw[thick] (0cm,0cm) circle(0.75cm);
+    %\draw[thick] (0cm,0cm) circle(1cm);
+    
+    \foreach \x in {0,45,90,135,180,225,270,315} { % <-- bissectrices added
+      \draw[->] (0cm,0cm) -- (\x:0.75cm); % lines from center to point
+      \filldraw[black] (\x:0.75cm) circle(0.4pt); % dots at each point
+    }
+    
+    % for the first and fourth quadrants
+    \foreach \adeg/\radtext/\xc/\yc in {
+      45/\frac{\pi}{4}/\frac{1}{\sqrt{2}}/\frac{1}{\sqrt{2}},
+      315/\frac{7\pi}{4}/\frac{1}{\sqrt{2}}/-\frac{1}{\sqrt{2}}
+    }
+    {
+      \draw (\adeg:0.40cm) node[fill=white] {$\radtext$}; % <-- rotate around key used
+      %\draw (\adeg:0.40cm) node[fill=white, rotate around={\adeg:(0,0)}] {$\radtext$}; % <-- rotate around key used
+      \draw (\adeg:0.90cm) node[] {$\left(\xc,\yc\right)$}; % <-- rotate around key used, radius changed, anchor key used
+      %\draw (\adeg:1.025cm) node[fill=white, rotate around={\adeg:(0,0)}, anchor=west] {$\left(\xc,\yc\right)$}; % <-- rotate around key used, radius changed, anchor key used
+    }
+  
+    % for the second and third quadrants
+    \foreach \adeg/\radtext/\xc/\yc in {
+      135 / \frac{3\pi}{4} / -\frac{1}{\sqrt{2}} / \frac{1}{\sqrt{2}},
+      225 / \frac{5\pi}{4} / -\frac{1}{\sqrt{2}} / -\frac{1}{\sqrt{2}}
+    }
+    {
+      \draw (\adeg:0.40cm) node[fill=white] {$\radtext$}; % <-- rotate around key used
+      %\draw (\adeg:0.40cm) node[fill=white, rotate around={\adeg+180:(0,0)}] {$\radtext$}; % <-- rotate around key used
+      \draw (\adeg:0.90cm) node[] {$\left(\xc,\yc\right)$}; % <-- rotate around key used, radius changed, anchor key used
+      %\draw (\adeg:1.15cm) node[fill=white, rotate around={\adeg+180:(0,0)}, anchor=east] {$\left(\xc,\yc\right)$}; % <-- rotate around key used, radius changed, anchor key used
+    }
+    
+    \foreach \adeg/\radtext/\xc/\yc in {0 / 2\pi / 1 / 0, 180 / \pi / -1 / 0}
+    {
+      \draw (\adeg:0.40cm) node[fill=white] {$\radtext$};
+      \draw (\adeg:0.90cm) node[fill=white] {$\left(\xc,\yc\right)$}; % <-- radius changed
+    }
+    
+    \foreach \adeg/\radtext/\xc/\yc in {90 / \frac{\pi}{2} / 0 / 1, 270 / \frac{3\pi}{2} / 0 / -1}
+    {
+      \draw (\adeg:0.40cm) node[fill=white] {$\radtext$};
+      \draw (\adeg:0.90cm) node[fill=white] {$\left(\xc,\yc\right)$}; % <-- radius changed
+    }
+  \end{tikzpicture}
+
+
+\end{document}
