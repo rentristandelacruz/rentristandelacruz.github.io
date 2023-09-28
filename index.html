@@ -160,8 +160,8 @@ occurred or was selected.
 The term <i> bit </i> is the contraction of "binary digit". Digits \( \texttt{0} \) and 
 \( \texttt{1} \) are often used as the values of the classical bit. Digit \( \texttt{0} \) 
 represents one of the two possible options while the digit \( \texttt{1} \) represents the other 
-option. Alternative pairs of values like <i>false-true</i>, <i>off-on</i>, and <i>low-high</i> are
-also used as values for the classical bit.
+option. Alternative pairs of values like <i>false/true</i>, <i>off/on</i>, <i>low/high</i> and
+<i>-/+</i> are also used as values for the classical bit.
 </p>
 
 <p>
@@ -647,8 +647,15 @@ amplitudes (sort of the 'direction' of the state). Using a previous example, \(\
 phases ('directions'). 
 </p>
 
-In classical computing, when you are computing with bits, there are only two processing you can do 
-with some bit \(b\), you either let it keep its value or flip the bit.
+<!------------------------------------------------------------------------------------------------->
+<h3>Operations on a Qubit</h3>
+
+In classical computing, when you are computing with bits, there are only two operations you can do 
+with some bit \(b\), you either let it keep its value or flip the bit (change 0 to 1 or change 1 
+to 0). In quantum computing, an operation on a qubit \(\ket{\psi} = \alpha\ket{0} + \beta\ket{1}\) 
+involves changing its amplitudes which means an operation can change the probabilities and phases
+encoded in a qubit. Unlike operations on bits, there are an infinite number of possible operations
+on a qubit. 
 
 <!------------------------------------------------------------------------------------------------->
 <h3> Complex Amplitudes </h3>
