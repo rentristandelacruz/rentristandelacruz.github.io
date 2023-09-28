@@ -93,7 +93,7 @@ a
 <center>
 <h1> Quantum States for Quantum Computing </h1>
 Prepared by: <i> Ren Tristan A. de la Cruz</i> <br>
-Updated on:  <i> 2023 September 27 </i>
+Updated on:  <i> 2023 September 28 </i>
 </center>
 
 <!------------------------------------------------------------------------------------------------->
@@ -472,14 +472,14 @@ Let \(\overline{p_0} = a^2\) be the probability observing the state \(\ket{0}\) 
 \(\overline{p_0}\) and \(\overline{p_1}\) are complementary values. i.e. 
 \(\overline{p_0} = (1 - \overline{p_1})\) and \(\overline{p_1} =(1 - \overline{p_0})\), or 
 alternately, \(\overline{p_0} + \overline{p_1} = 1\). If you increase the probability 
-\(\overline{p_0}\) of observing \(\ket{0}\), you have to decrease the proability \(\overline{p_1}\)
+\(\overline{p_0}\) of observing \(\ket{0}\), you have to decrease the probability \(\overline{p_1}\)
 of observing \(\ket{1}\) and vice versa. The probabilitiy of observing \(\ket{0}\) and the 
 probability of observing \(\ket{1}\) sum up to \(1\). The Born rule \(a^2 + b^2 =1\) is exactly the
 probability rule \(p_0 + p_1 = 1\) but written in terms of amplitutes.
 </p>
 
 <!------------------------------------------------------------------------------------------------->
-<h3>Qubits as Points on a 2D Plane</h3>
+<h3>Qubits as Points on a 2D Plane (or as Points on a Circle)</h3>
 
 <p>
 A valid qubit \(\ket{\psi} = \alpha\ket{0} + \beta\ket{1}\) can be represented by the point 
@@ -597,7 +597,7 @@ The table below shows some examples of qubits/states specified by some angle \(\
 </center>
 
 <br>
-The figure below shows the qubits a point (or as arrows)
+The figure below shows the qubits as points (or as arrows).
 <br>
 
 <div align="center">
@@ -610,37 +610,51 @@ The figure below shows the qubits a point (or as arrows)
 
 <p>
 Look at the qubit \(\ket{\psi_0} = \ket{0}\) when \(\theta=0\) and the state \(\ket{\psi_{\pi}}= 
--\ket{0}\) when \(\theta=\pi\). For both qubits, you can observe observe their corresponding quantum
-systems as being in state \(\ket{0}\) since for both of them the probability \(|\alpha|^2\) of 
-observing the system in \(\ket{0}\) is 1 while the probability \(|\beta|^2\) of observing the system
+-\ket{0}\) when \(\theta=\pi\). For both qubits, you can observe their corresponding quantum
+systems as being in state \(\ket{0}\) since for both of them the probability \(\alpha^2\) of 
+observing the system in \(\ket{0}\) is 1 while the probability \(\beta^2\) of observing the system
 in \(\ket{1}\) is 0. Note that for both \(\ket{\psi_0}\) and \(\ket{\psi_\pi}\), they specify the
-same probabilities but they have different amplitudes (specifically, different \(\alpha\), 
-\(\alpha = 1\) for \(\ket{\psi_0}\) and \(\alpha=-1\) for \(\ket{\psi_\pi})\). When two
-quantum states have the same probabilities but have different amplitudes then we say that
-they have <b><i>different phases</i></b> or they are <b><i>out of phase</i></b>. Informally, the
-<b><i>phase</i></b> of a qubit is related to its direction (or the angle \(\theta\)). The
-direction \(\theta=0\) is the opposite of the direction \(\theta=\pi\). For easier visualization, 
-instead of representing a qubit as a single point at \((\alpha,\beta)\) or \((1,\theta)\), you 
-can draw an arrow from the origin to that point and this arrow will represent the qubit. Now it is
- easier to see that the arrow representing qubit \(\ket{\psi_0}\) points in the opposite direction
-of the arrow representing qubit \(\ket{\psi_\pi}\).
+same probabilities but they have different amplitudes. For \(\ket{\psi_0}\), \(\alpha = 1\) while
+for \(\ket{\psi_\pi}\), \(\alpha = -1\). When two qubits have the same probabilities but have 
+different amplitudes we say that they have <b><i>different phases</i></b> or they are <b><i>out
+of phase</i></b>. Informally, the <b><i>phase</i></b> of a qubit is related to its direction (or 
+the angle \(\theta\)). The direction \(\theta=0\) is the opposite of the direction \(\theta=\pi\).
+For easier visualization, instead of representing a qubit as a single point at \((\alpha,\beta)\) or
+\((1,\theta)\), you can draw an arrow from the origin to that point and this arrow will represent 
+the qubit. Now it is easier to see that the arrow representing qubit \(\ket{\psi_0}\) points in the
+opposite direction of the arrow representing qubit \(\ket{\psi_\pi}\).
 </p>
 
 <p>
-For other examples, you can look at the pair of qubits \(\ket{\psi_{\frac{\pi}{4}}}\) and 
+For another example, you can look at the pair of qubits \(\ket{\psi_{\frac{\pi}{2}}}\) and 
 \(\ket{\psi_{\frac{3\pi}{2}}}\). They both encode the probability 1 of observing \(\ket{1}\) and
 probability 0 of observing \(\ket{0}\) but the arrows representing them point on opposite
-directions. \(\ket{\frac{\pi}{4}}\)'s arrow points directly upward while \(\ket{\frac{\pi}{4}}\) 
-while \(\ket{\psi_{\frac{3\pi}{2}}}\)'s arrow points directly downward. A more interesting 
-example is the set of qubits \( \ket{\psi_{\frac{\pi}{4}}},  \ket{\psi_{\frac{3\pi}{4}}}, 
+directions. \(\ket{\psi_\frac{\pi}{2}}\)'s arrow points directly upward while 
+\(\ket{\psi_{\frac{3\pi}{2}}}\)'s arrow points directly downward. A more interesting example is the
+set of qubits \( \ket{\psi_{\frac{\pi}{4}}},  \ket{\psi_{\frac{3\pi}{4}}}, 
 \ket{\psi_{\frac{5\pi}{4}}}, \ket{\psi_{\frac{7\pi}{4}}}\) where they all encode the same
 probabilities: \(\frac{1}{2}\) probability of observing \(\ket{0}\) and \(\frac{1}{2}\) probability
 of observing \(\ket{1}\) but their arrows point to different directions (due to the different
 signs of the amplitudes).
 </p>
 
+<p>
+We can now fully answer the question <i> "What exactly are the information that the qubit encodes?"
+</i>. Aside from the information about the probability of observing the state \(\ket{0}\) and the 
+probability of observing the state \(\ket{1}\), the qubit also encodes the phase defined by the 
+amplitudes (sort of the 'direction' of the state). Using a previous example, \(\ket{\psi_0} = 
+\ket{0}\) and \(\ket{\psi_\pi} = -1\ket{0}\) encode the sample probabilities but they have different
+phases ('directions'). 
+</p>
+
+In classical computing, when you are computing with bits, there are only two processing you can do 
+with some bit \(b\), you either let it keep its value or flip the bit.
+
 <!------------------------------------------------------------------------------------------------->
 <h3> Complex Amplitudes </h3>
+
+<!------------------------------------------------------------------------------------------------->
+<h3> Qubits as Points in 3D Space (or as Points on a Sphere) </h3>
 
 
 <div align="center">
