@@ -93,7 +93,7 @@ a
 <center>
 <h1> Quantum States for Quantum Computing </h1>
 Prepared by: <i> Ren Tristan A. de la Cruz</i> <br>
-Updated on:  <i> 2023 October 02 </i>
+Updated on:  <i> 2023 October 04 </i>
 </center>
 
 <!------------------------------------------------------------------------------------------------->
@@ -609,7 +609,7 @@ The figure below shows the qubits as points (or as arrows).
 
 
 <p>
-Look at the qubit \(\ket{\psi_0} = \ket{0}\) when \(\theta=0\) and the state \(\ket{\psi_{\pi}}= 
+Look at the qubit \(\ket{\psi_0} = \ket{0}\) when \(\theta=0\) and the qubit \(\ket{\psi_{\pi}}= 
 -\ket{0}\) when \(\theta=\pi\). For both qubits, you can observe their corresponding quantum
 systems as being in state \(\ket{0}\) since for both of them the probability \(\alpha^2\) of 
 observing the system in \(\ket{0}\) is 1 while the probability \(\beta^2\) of observing the system
@@ -650,15 +650,89 @@ phases ('directions').
 <!------------------------------------------------------------------------------------------------->
 <h3>Operations on a Qubit</h3>
 
+<p>
 In classical computing, when you are computing with bits, there are only two operations you can do 
 with some bit \(b\), you either let it keep its value or flip the bit (change 0 to 1 or change 1 
 to 0). In quantum computing, an operation on a qubit \(\ket{\psi} = \alpha\ket{0} + \beta\ket{1}\) 
 involves changing its amplitudes which means an operation can change the probabilities and phases
 encoded in a qubit. Unlike operations on bits, there are an infinite number of possible operations
-on a qubit. 
+on a qubit.  
+</p>
+
+<p>
+Let \(U\) be a 1-qubit operator. The operator \(U\) will take a qubit \(\ket{\psi} = \alpha\ket{0}
++\beta\ket{1}\) and transform it to a new qubit \(\ket{\psi'} = \alpha'\ket{0} + \beta'\ket{1}\)
+
+$$
+\begin{align*}
+U(\ket{\psi}) &= U(\alpha\ket{0} + \beta\ket{1})  \\
+              &= \alpha'\ket{0} + \beta'\ket{1} \\
+              &= \ket{\psi'}.
+\end{align*}
+$$
+
+where \(\alpha'\) is the new amplitude associated with state \(\ket{0}\) and \(\beta'\) is the new
+amplitude associated with the state \(\ket{1}\). The transformed qubit \(\ket{\psi'}\) should still
+follow the Born rule. i.e. \( {(a')}^2 + {(b')}^2 = 1\). 
+</p>
+
+<p> We can look an operator \(U\) as being composed of two functions, function \(f\) and function 
+\(g\). Function \(f\) takes the amplitudes \(\alpha, \beta\) as input and return a new amplitude
+\(\alpha'\) associated with state \(\ket{0}\). Function \(g\) takes the same amplitudes 
+\(\alpha,\beta\) as input and return a new amplitude \(\beta'\) associated with state \(\ket{1}\).
+
+$$
+\begin{align*}
+                        \alpha' &= f(\alpha,\beta) \\
+                        \beta'  &= g(\alpha,\beta) \\
+U(\alpha\ket{0} + \beta\ket{1}) &= f(\alpha,\beta)\ket{0} + g(\alpha,\beta)\ket{1} \\
+\end{align*}
+$$
+
+The choice of functions \(f, g\) should also follow the Born rule. i.e. \( {[f(\alpha,\beta)]}^2 + 
+{[g(\alpha, \beta)]}^2 = 1.\)
+</p>
+
+<center>
+<table style="width:75%">
+  <tr>
+    <th>Operator Name </th>
+    <th>\(  f(\alpha,\beta) \)</th>
+    <th>\(  g(\alpha,\beta) \)</th>
+    <th>\( \ket{\psi'} = f(\alpha,\beta)\ket{0} + g(\alpha,\beta) \ket{1} \)</th>
+  </tr>
+  <tr>
+    <td> \( FLIP \) </td>
+    <td> \( f(\alpha,\beta) = \beta\)  </td>
+    <td> \( g(\alpha,\beta) = \alpha\) </td>
+    <td> \( \ket{\psi'} = \beta\ket{0} + \alpha\ket{1} \) </td>
+  </tr>
+    </td>
+  </tr>
+  <tr>
+    <td> \( HADAMARD \) </td>
+    <td> \( f(\alpha,\beta) = \left(\frac{\alpha+\beta}{\sqrt{2}}\right)\) </td>
+    <td> \( g(\alpha,\beta) = \left(\frac{\alpha-\beta}{\sqrt{2}}\right)\) </td>
+    <td> \( \ket{\psi'} = \left(\frac{\alpha+\beta}{\sqrt{2}} \right)\ket{0} + \left(\frac{\alpha-\beta}{\sqrt{2}}\right)\ket{1} \) </td>
+  </tr>
+  <tr>
+    <td colspan="4">
+     \( FLIP(\alpha\ket{0} + \beta\ket{1}) = \beta\ket{0} + \alpha\ket{1} \)
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4">
+     \( HADAMARD(\alpha\ket{0} + \beta\ket{1}) = \left(\frac{\alpha+\beta}{\sqrt{2}}\right)\ket{0} + \left(\frac{\alpha-\beta}{\sqrt{2}}\right)\ket{1} \)
+    </td>
+  </tr>
+</table>
+</center>
 
 <!------------------------------------------------------------------------------------------------->
 <h3> Complex Amplitudes </h3>
+$$
+\ket{\psi} = cos(\frac{\theta}{2})\ket{0} + e^{i\phi} sin(\frac{\theta}{2}) i \ket{1}
+$$
 
 <!------------------------------------------------------------------------------------------------->
 <h3> Qubits as Points in 3D Space (or as Points on a Sphere) </h3>
@@ -677,9 +751,6 @@ on a qubit.
 <!------------------------------------------------------------------------------------------------->
 <h3> Qubits as Vectors </h3>
 
-$$
-\ket{\psi} = cos(\frac{\theta}{2})\ket{0} + e^{i\phi} sin(\frac{\theta}{2}) i \ket{1}
-$$
 
 The qubit \( \ket{0} \) can be represented by the column vector:
 
