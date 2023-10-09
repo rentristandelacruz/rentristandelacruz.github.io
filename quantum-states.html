@@ -706,8 +706,8 @@ Let \(NOT\) be the <i>quantum bit flip</i> (aka <i>quantum NOT</i>) operator. \(
 
 $$
 \begin{align*}
-  f(\alpha,\beta) &= \beta \\
-  g(\alpha,\beta) &= \alpha \\
+  \alpha' &= f(\alpha,\beta) = \beta \\
+  \beta'  &= g(\alpha,\beta) = \alpha \\
   NOT(\alpha\ket{0} + \beta\ket{1}) &= \alpha'\ket{0} + \beta' \ket{1} \\
                                      &= f(\alpha,\beta)\ket{0} + g(\alpha,\beta)\ket{1} \\
                                      &= \beta\ket{0} + \alpha\ket{1}
@@ -719,17 +719,19 @@ this is why function \(f\) returns \(\beta\) as the new amplitude \(\alpha'\) of
 and why function \(g\) returns \(\alpha\) as the new amplitude \(\beta'\) of state \(\ket{1}\). If
 the original qubit is either \(\ket{\psi}=\ket{0}\) where \( \alpha=1,\beta=0 \) or \( \ket{\psi}
 = \ket{1} \) where \(\alpha=0, \beta=1\), then quantum NOT operator behaves exactly like a classic
-NOT (bit flip) operator.
+NOT (bit flip) operator. 
+
 </p>
 
 
 <p>
-The second example is the \(HADAMARD\) (or \(H\) for short) operator.
+The second example is the \(HADAMARD\) operator (of \(H\) operator for short). The \(H\) operator 
+and its \(f\) and \(g\) functions are defined as follows:
 
 $$
 \begin{align*}
-  f(\alpha,\beta) &= \left(\frac{\alpha+\beta}{\sqrt{2}}\right) = \alpha'  \\
-  g(\alpha,\beta) &= \left(\frac{\alpha-\beta}{\sqrt{2}}\right) = \beta'  \\
+  \alpha' &= f(\alpha,\beta)  = \left(\frac{\alpha+\beta}{\sqrt{2}}\right)  \\
+  \beta'  &= g(\alpha,\beta)  = \left(\frac{\alpha-\beta}{\sqrt{2}}\right)  \\
   H(\alpha\ket{0} + \beta\ket{1}) &= \alpha'\ket{0} + \beta'\ket{1}  \\
                                   &= f(\alpha,\beta)\ket{0} + g(\alpha,\beta)\ket{1}  \\
                                   &= \left(\frac{\alpha+\beta}{\sqrt{2}}\right)\ket{0} + 
