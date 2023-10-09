@@ -647,6 +647,7 @@ amplitudes (sort of the 'direction' of the state). Using a previous example, \(\
 phases ('directions'). 
 </p>
 
+
 <!------------------------------------------------------------------------------------------------->
 <h3>Operations on a Qubit</h3>
 
@@ -658,6 +659,7 @@ involves changing its amplitudes which means an operation can change the probabi
 encoded in a qubit. Unlike operations on bits, there are an infinite number of possible operations
 on a qubit.  
 </p>
+
 
 <p>
 Let \(U\) be a 1-qubit operator. The operator \(U\) will take a qubit \(\ket{\psi} = \alpha\ket{0}
@@ -676,6 +678,7 @@ amplitude associated with the state \(\ket{1}\). The transformed qubit \(\ket{\p
 follow the Born rule. i.e. \( {(a')}^2 + {(b')}^2 = 1\). 
 </p>
 
+
 <p> We can look an operator \(U\) as being composed of two functions, function \(f\) and function 
 \(g\). Function \(f\) takes the amplitudes \(\alpha, \beta\) as input and return a new amplitude
 \(\alpha'\) associated with state \(\ket{0}\). Function \(g\) takes the same amplitudes 
@@ -693,44 +696,47 @@ The choice of functions \(f, g\) should also follow the Born rule. i.e. \( {[f(\
 {[g(\alpha, \beta)]}^2 = 1.\)
 </p>
 
+
 <p>
-Example
+For our first example of an operator on a qubit, we can look at the quantum analogue of the bit flip.
+Let \(NOT\) be the <i>quantum bit flip</i> (aka <i>quantum NOT</i>) operator. \(NOT\) takes a qubit 
+\(\ket{\psi} = \alpha\ket{0} + \beta\ket{1}\) and returns a new qubit \(\ket{\psi'} = \alpha'\ket{0}
++\beta'\ket{1}\) where \(\alpha' = f(\alpha,\beta)\) and \(\beta' =  g(\alpha,\beta) \). Functions 
+\(f\) and \(g\) and operator \(NOT\) are defined as follows:
+
+$$
+\begin{align*}
+  f(\alpha,\beta) &= \beta \\
+  g(\alpha,\beta) &= \alpha \\
+  NOT(\alpha\ket{0} + \beta\ket{1}) &= \alpha'\ket{0} + \beta' \ket{1} \\
+                                     &= f(\alpha,\beta)\ket{0} + g(\alpha,\beta)\ket{1} \\
+                                     &= \beta\ket{0} + \alpha\ket{1}
+\end{align*}
+$$
+
+\(NOT\) swaps the amplitudes (and hence the probabilities) of states \(\ket{0}\) and \(\ket{1}\)
+this is why function \(f\) returns \(\beta\) as the new amplitude \(\alpha'\) of state \(\ket{0}\)
+and why function \(g\) returns \(\alpha\) as the new amplitude \(\beta'\) of state \(\ket{1}\). If
+the original qubit is either \(\ket{\psi}=\ket{0}\) where \( \alpha=1,\beta=0 \) or \( \ket{\psi}
+= \ket{1} \) where \(\alpha=0, \beta=1\), then quantum NOT operator behaves exactly like a classic
+NOT (bit flip) operator.
 </p>
 
-<center>
-<table style="width:75%">
-  <tr>
-    <th>Operator Name </th>
-    <th>\(  f(\alpha,\beta) \)</th>
-    <th>\(  g(\alpha,\beta) \)</th>
-    <th>\( \ket{\psi'} = f(\alpha,\beta)\ket{0} + g(\alpha,\beta) \ket{1} \)</th>
-  </tr>
-  <tr>
-    <td> \( FLIP \) </td>
-    <td> \( f(\alpha,\beta) = \beta\)  </td>
-    <td> \( g(\alpha,\beta) = \alpha\) </td>
-    <td> \( \ket{\psi'} = \beta\ket{0} + \alpha\ket{1} \) </td>
-  </tr>
-    </td>
-  </tr>
-  <tr>
-    <td> \( HADAMARD \) </td>
-    <td> \( f(\alpha,\beta) = \left(\frac{\alpha+\beta}{\sqrt{2}}\right)\) </td>
-    <td> \( g(\alpha,\beta) = \left(\frac{\alpha-\beta}{\sqrt{2}}\right)\) </td>
-    <td> \( \ket{\psi'} = \left(\frac{\alpha+\beta}{\sqrt{2}} \right)\ket{0} + \left(\frac{\alpha-\beta}{\sqrt{2}}\right)\ket{1} \) </td>
-  </tr>
-  <tr>
-    <td colspan="4">
-     \( FLIP(\alpha\ket{0} + \beta\ket{1}) = \beta\ket{0} + \alpha\ket{1} \)
-    </td>
-  </tr>
-  <tr>
-    <td colspan="4">
-     \( HADAMARD(\alpha\ket{0} + \beta\ket{1}) = \left(\frac{\alpha+\beta}{\sqrt{2}}\right)\ket{0} + \left(\frac{\alpha-\beta}{\sqrt{2}}\right)\ket{1} \)
-    </td>
-  </tr>
-</table>
-</center>
+
+<p>
+The second example is the \(HADAMARD\) (or \(H\) for short) operator.
+
+$$
+\begin{align*}
+  f(\alpha,\beta) &= \left(\frac{\alpha+\beta}{\sqrt{2}}\right) = \alpha'  \\
+  g(\alpha,\beta) &= \left(\frac{\alpha-\beta}{\sqrt{2}}\right) = \beta'  \\
+  H(\alpha\ket{0} + \beta\ket{1}) &= \alpha'\ket{0} + \beta'\ket{1}  \\
+                                  &= f(\alpha,\beta)\ket{0} + g(\alpha,\beta)\ket{1}  \\
+                                  &= \left(\frac{\alpha+\beta}{\sqrt{2}}\right)\ket{0} + 
+                                     \left(\frac{\alpha-\beta}{\sqrt{2}}\right)\ket{1}  \\
+\end{align*}
+$$
+</p>
 
 <!------------------------------------------------------------------------------------------------->
 <h3> Complex Amplitudes </h3>
