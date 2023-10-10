@@ -5,8 +5,13 @@
 <title> Quantum States for Quantum Computing </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!--- Remote Scripts --->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!--- Local Scripts --->
+<!--- script src="resources/polyfill.min.js"></script>
+<script id="MathJax-script" async src="resources/tex-mml-chtml.js"></script--->
 
 <style>
 
@@ -673,6 +678,7 @@ U(\ket{\psi}) &= U(\alpha\ket{0} + \beta\ket{1})  \\
 \end{align*}
 $$
 
+
 where \(\alpha'\) is the new amplitude associated with state \(\ket{0}\) and \(\beta'\) is the new
 amplitude associated with the state \(\ket{1}\). The transformed qubit \(\ket{\psi'}\) should still
 follow the Born rule. i.e. \( {(a')}^2 + {(b')}^2 = 1\). 
@@ -683,6 +689,13 @@ follow the Born rule. i.e. \( {(a')}^2 + {(b')}^2 = 1\).
 \(g\). Function \(f\) takes the amplitudes \(\alpha, \beta\) as input and return a new amplitude
 \(\alpha'\) associated with state \(\ket{0}\). Function \(g\) takes the same amplitudes 
 \(\alpha,\beta\) as input and return a new amplitude \(\beta'\) associated with state \(\ket{1}\).
+
+<div align="center">
+  <img   src="figures/quantum-ops-generic.svg" 
+         alt="Generic 1-Qubit Operator"
+       align="center"
+       width="500"/>
+</div>
 
 $$
 \begin{align*}
@@ -714,11 +727,11 @@ $$
 \end{align*}
 $$
 
-\(NOT\) swaps the amplitudes (and hence the probabilities) of states \(\ket{0}\) and \(\ket{1}\)
-this is why function \(f\) returns \(\beta\) as the new amplitude \(\alpha'\) of state \(\ket{0}\)
+\(NOT\) swaps the amplitudes (and hence the probabilities) of states \(\ket{0}\) and \(\ket{1}\).
+This is why function \(f\) returns \(\beta\) as the new amplitude \(\alpha'\) of state \(\ket{0}\)
 and why function \(g\) returns \(\alpha\) as the new amplitude \(\beta'\) of state \(\ket{1}\). If
 the original qubit is either \(\ket{\psi}=\ket{0}\) where \( \alpha=1,\beta=0 \) or \( \ket{\psi}
-= \ket{1} \) where \(\alpha=0, \beta=1\), then quantum NOT operator behaves exactly like a classic
+= \ket{1} \) where \(\alpha=0, \beta=1\), then quantum NOT operator behaves exactly like a classical
 NOT (bit flip) operator. 
 
 </p>
@@ -736,6 +749,28 @@ $$
                                   &= f(\alpha,\beta)\ket{0} + g(\alpha,\beta)\ket{1}  \\
                                   &= \left(\frac{\alpha+\beta}{\sqrt{2}}\right)\ket{0} + 
                                      \left(\frac{\alpha-\beta}{\sqrt{2}}\right)\ket{1}  \\
+\end{align*}
+$$
+
+The \(H\) operator will often be use to put basis states \(\ket{0}\) and \(\ket{1}\) in superposition.
+e.g. If \(\ket{\psi} = \ket{0} = 1\ket{0} + 0\ket{1}\) where \(\alpha=1, \beta=0\), then:
+
+$$
+\begin{align*}
+H(\ket{0})  &= \left(\frac{\alpha+\beta}{\sqrt{2}}\right)\ket{0} +\left(\frac{\alpha-\beta}{\sqrt{2}}\right)\ket{1}\\
+              &= \left(\frac{1+0}{\sqrt{2}}\right)\ket{0} +\left(\frac{1-0}{\sqrt{2}}\right)\ket{1}\\
+              &=  \frac{1}{\sqrt{2}}\ket{0} + \frac{1}{\sqrt{2}}\ket{1} \\
+           &= \frac{1}{\sqrt{2}} \left( \ket{0} + \ket{1} \right)
+\end{align*}
+$$
+
+If \(\ket{\psi} = \ket{1} = 0\ket{0} + 1\ket{1}\) where \(\alpha=0, \beta=1\), then:
+$$
+\begin{align*}
+H(\ket{1})  &= \left(\frac{\alpha+\beta}{\sqrt{2}}\right)\ket{0} +\left(\frac{\alpha-\beta}{\sqrt{2}}\right)\ket{1}\\
+            &= \left(\frac{0+1}{\sqrt{2}}\right)\ket{0} +\left(\frac{0-1}{\sqrt{2}}\right)\ket{1}\\
+            &=  \frac{1}{\sqrt{2}}\ket{0} - \frac{1}{\sqrt{2}}\ket{1} \\
+            &= \frac{1}{\sqrt{2}} \left( \ket{0} - \ket{1} \right)
 \end{align*}
 $$
 
