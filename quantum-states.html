@@ -712,33 +712,40 @@ The choice of functions \(f, g\) should also follow the Born rule. i.e. \( {[f(\
 
 <p>
 For our first example of an operator on a qubit, we can look at the quantum analogue of the bit flip.
-Let \(NOT\) be the <i>quantum bit flip</i> (aka <i>quantum NOT</i>) operator. \(NOT\) takes a qubit 
+Let \(X\) be the <i>quantum bit flip</i> (aka <i>quantum NOT</i>) operator. \(X\) takes a qubit 
 \(\ket{\psi} = \alpha\ket{0} + \beta\ket{1}\) and returns a new qubit \(\ket{\psi'} = \alpha'\ket{0}
 +\beta'\ket{1}\) where \(\alpha' = f(\alpha,\beta)\) and \(\beta' =  g(\alpha,\beta) \). Functions 
-\(f\) and \(g\) and operator \(NOT\) are defined as follows:
+\(f\) and \(g\) and operator \(X\) are defined as follows:
 
 $$
 \begin{align*}
   \alpha' &= f(\alpha,\beta) = \beta \\
   \beta'  &= g(\alpha,\beta) = \alpha \\
-  NOT(\alpha\ket{0} + \beta\ket{1}) &= \alpha'\ket{0} + \beta' \ket{1} \\
+  X(\alpha\ket{0} + \beta\ket{1}) &= \alpha'\ket{0} + \beta' \ket{1} \\
                                      &= f(\alpha,\beta)\ket{0} + g(\alpha,\beta)\ket{1} \\
                                      &= \beta\ket{0} + \alpha\ket{1}
 \end{align*}
 $$
 
-\(NOT\) swaps the amplitudes (and hence the probabilities) of states \(\ket{0}\) and \(\ket{1}\).
+\(X\) swaps the amplitudes (and hence the probabilities) of states \(\ket{0}\) and \(\ket{1}\).
 This is why function \(f\) returns \(\beta\) as the new amplitude \(\alpha'\) of state \(\ket{0}\)
 and why function \(g\) returns \(\alpha\) as the new amplitude \(\beta'\) of state \(\ket{1}\). If
 the original qubit is either \(\ket{\psi}=\ket{0}\) where \( \alpha=1,\beta=0 \) or \( \ket{\psi}
 = \ket{1} \) where \(\alpha=0, \beta=1\), then quantum NOT operator behaves exactly like a classical
 NOT (bit flip) operator. 
 
+<div align="center">
+  <img   src="figures/quantum-ops-not.svg" 
+         alt="Quantum NOT Operator as Reflection"
+       align="center"
+       width="00"/>
+</div>
+
 </p>
 
 
 <p>
-The second example is the \(HADAMARD\) operator (of \(H\) operator for short). The \(H\) operator 
+The second example is the \(HADAMARD\) operator (or \(H\) operator for short). The \(H\) operator 
 and its \(f\) and \(g\) functions are defined as follows:
 
 $$
@@ -774,7 +781,9 @@ H(\ket{1})  &= \left(\frac{\alpha+\beta}{\sqrt{2}}\right)\ket{0} +\left(\frac{\a
 \end{align*}
 $$
 
-
+The \(H\) operator transforms the basis state \(\ket{0}\) to the state 
+\(\left(\frac{1}{\sqrt{2}}\ket{0} + \frac{1}{\sqrt{2}}\ket{1}\right)\) and the basis state 
+\(\ket{1}\) to the state \(\left(\frac{1}{\sqrt{2}}\ket{0} - \frac{1}{\sqrt{2}}\ket{1}\right) \)
 </p>
 
 <!------------------------------------------------------------------------------------------------->
