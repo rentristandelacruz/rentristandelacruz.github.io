@@ -69,9 +69,10 @@ a
 }
 
 .main {
-  margin-left : 200px; /* Same width as the sidebar + left position in px */
-  font-size   : 25px; /* Increased text to enable scrolling */
-  padding     : 0px 10px;
+  margin-left  : 20px; /* Same width as the sidebar + left position in px */
+  margin-right : 20px; /* Same width as the sidebar + left position in px */
+  font-size    : 25px; /* Increased text to enable scrolling */
+  padding      : 0px 10px;
 }
 
 @media screen and (max-height: 450px) {
@@ -82,6 +83,7 @@ a
 </head>
 <body>
 
+<!---
 <div class="sidenav">
   <div class="sidenav-h">  <b> SECTIONS</b> </div>
   <a href="#bit">          Classical Bit </a>
@@ -91,6 +93,7 @@ a
   <div class="sidenav-h">  <b> APPENDIX</b> </div>
   <a href="#complex"> Complex Numbers  </a>
 </div>
+--->
 
 <div class="main">
 
@@ -782,8 +785,17 @@ H(\ket{1})  &= \left(\frac{\alpha+\beta}{\sqrt{2}}\right)\ket{0} +\left(\frac{\a
 $$
 
 The \(H\) operator transforms the basis state \(\ket{0}\) to the state 
-\(\left(\frac{1}{\sqrt{2}}\ket{0} + \frac{1}{\sqrt{2}}\ket{1}\right)\) and the basis state 
-\(\ket{1}\) to the state \(\left(\frac{1}{\sqrt{2}}\ket{0} - \frac{1}{\sqrt{2}}\ket{1}\right) \)
+\( \ket{+} = \left(\frac{1}{\sqrt{2}}\ket{0} + \frac{1}{\sqrt{2}}\ket{1}\right)\) and the basis 
+state  \(\ket{1}\) to the state \(\ket{-} = \left(\frac{1}{\sqrt{2}}\ket{0} - 
+\frac{1}{\sqrt{2}}\ket{1}\right) \).
+
+<div align="center">
+  <img   src="figures/quantum-ops-hadamard.svg" 
+         alt="Hadamard Operator as Reflections"
+       align="center"
+       width="600"/>
+</div>
+
 </p>
 
 <!------------------------------------------------------------------------------------------------->
